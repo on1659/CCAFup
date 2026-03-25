@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "CCAFup — CCA-F Exam Prep Hub",
+    "description": "Unofficial community hub for CCA-F (Claude Certified Architect - Foundations) exam preparation"
+  },
+  "nav": {
+    "home": "Home",
+    "examOverview": "Exam Overview",
+    "examInfo": "Exam Info",
+    "partner": "Partner Guide",
+    "dayGuide": "Test Day",
+    "faq": "FAQ",
+    "domains": "Domains",
+    "scenarios": "Scenarios",
+    "glossary": "Glossary",
+    "roadmap": "Prep Guide",
+    "cheatsheet": "Cheatsheet",
+    "resources": "Resources",
+    "quiz": "Practice Quiz",
+    "dashboard": "Dashboard",
+    "community": "Community"
+  },
+  "common": {
+    "unofficial": "Unofficial",
+    "comingSoon": "Coming Soon",
+    "search": "Search...",
+    "searchPlaceholder": "Search content (Cmd+K)",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "language": "English",
+    "readMore": "Read more",
+    "download": "Download",
+    "share": "Share",
+    "bookmark": "Bookmark",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Enter your email address",
+    "subscribeSuccess": "Subscribed successfully!",
+    "subscribeCta": "Get daily practice questions in your inbox",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "home": {
+    "hero": "Prepare for CCA-F, Systematically",
+    "heroSub": "Unofficial community-driven exam prep hub",
+    "questions": "60 Questions",
+    "duration": "120 Minutes",
+    "passingScore": "720 to Pass",
+    "startPrep": "Start Preparing",
+    "viewDomains": "Explore Domains"
+  },
+  "examOverview": {
+    "title": "Exam Overview",
+    "description": "Get a comprehensive overview of the CCA-F (Claude Certified Architect - Foundations) exam structure and key information."
+  },
+  "examInfo": {
+    "title": "Exam Information",
+    "description": "Learn about the exam format, registration process, cost, passing criteria, and other details for the CCA-F exam."
+  },
+  "partner": {
+    "title": "Partner Network Guide",
+    "description": "Learn how to register and prepare for the exam through the Anthropic Partner Network."
+  },
+  "dayGuide": {
+    "title": "Test Day Guide",
+    "description": "Everything you need to know for test day — preparation checklist, environment setup, and important reminders."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to frequently asked questions about CCA-F exam preparation."
+  },
+  "domains": {
+    "title": "Domain List",
+    "description": "Explore the 5 domains that make up the CCA-F exam, including their weight and key topics.",
+    "weight": "Exam Weight"
+  },
+  "domainDetail": {
+    "title": "Domain Detail",
+    "description": "Explore the detailed study content and key concepts for the selected domain.",
+    "backToList": "Back to Domain List"
+  },
+  "scenarios": {
+    "title": "Scenario List",
+    "description": "Study real-world application scenarios that appear on the CCA-F exam.",
+    "viewScenario": "View Scenario"
+  },
+  "scenarioDetail": {
+    "title": "Scenario Detail",
+    "description": "Explore the detailed implementation methods and key points for the selected scenario.",
+    "backToList": "Back to Scenario List"
+  },
+  "glossary": {
+    "title": "Glossary",
+    "description": "A curated list of key terms and concepts for the CCA-F exam.",
+    "searchTerms": "Search terms..."
+  },
+  "roadmap": {
+    "title": "Prep Guide",
+    "description": "A step-by-step study roadmap and preparation strategy to help you pass the CCA-F exam."
+  },
+  "cheatsheet": {
+    "title": "Cheatsheet",
+    "description": "A quick-reference summary sheet for last-minute review before the exam."
+  },
+  "resources": {
+    "title": "Resources & Links",
+    "description": "A collection of official docs, study materials, and community links for CCA-F exam preparation."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Learn about CCAFup's policies on data collection, usage, and protection."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "Review the terms and conditions for using CCAFup services."
+  },
+  "footer": {
+    "disclaimer": "CCAFup is an unofficial community hub and is not affiliated with Anthropic.",
+    "copyright": "© 2026 CCAFup. All rights reserved."
+  }
+}

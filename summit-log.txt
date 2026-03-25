@@ -1,0 +1,114 @@
+========================================
+📋 Summit Log - 2026-03-25
+========================================
+
+## 변경 파일 (35 files changed, +3842 -3786)
+
+### 삭제된 파일 (이전 프로젝트 잔재 정리)
+- .claude/commands/addsound.md: LAMDiceBot 사운드 추가 커맨드 삭제
+- .claude/commands/delsound.md: LAMDiceBot 사운드 삭제 커맨드 삭제
+- .claude/commands/sound.md: LAMDiceBot 사운드 관리 커맨드 삭제
+- .claude/commands/sounddocs.md: LAMDiceBot 사운드 문서화 커맨드 삭제
+- .claude/commands/meetsound.md: LAMDiceBot 사운드 회의 커맨드 삭제
+- .claude/commands/addvehicle.md: LAMDiceBot 차량 추가 커맨드 삭제
+- src/app/page.tsx: 기본 Next.js 페이지 삭제 (locale 라우팅으로 대체)
+
+### 수정된 스킬 파일 (8개 전체 CCAFup 맞춤 재작성)
+- .claude/skills/skill-backend.md: Supabase + Prisma + Server Actions 기반으로 재작성
+- .claude/skills/skill-frontend.md: Next.js App Router + MDX + next-intl 기반으로 재작성
+- .claude/skills/skill-ui.md: Stone+Indigo 테마, CSS 변수, shadcn/ui 기반으로 재작성
+- .claude/skills/skill-ux.md: CCA-F 수험생 대상 학습 UX 기반으로 재작성
+- .claude/skills/skill-qa.md: MDX 렌더링, 다국어, 다크모드, Lighthouse 검증 기반으로 재작성
+- .claude/skills/skill-pd.md: Phase 1/2/3 관리, CCAFup 타임라인 기반으로 재작성
+- .claude/skills/skill-planner-research.md: CCA-F 도메인 구조, MoSCoW 분류 기반으로 재작성
+- .claude/skills/skill-planner-strategy.md: SEO 전략, 전환 퍼널, KPI 기반으로 재작성
+- .claude/skills/README.md: CCAFup 프로젝트 컨텍스트로 업데이트
+
+### 수정된 커맨드 파일 (6개)
+- .claude/commands/meeting.md: CCAFup 8인 팀 구성으로 변경
+- .claude/commands/meeting-multi.md: CCAFup 역할극 회의로 변경
+- .claude/commands/meeting-agent.md: CCAFup 멀티에이전트 회의로 변경
+- .claude/commands/meeting-team.md: CCAFup 팀 기반 회의로 변경
+- .claude/commands/qa.md: Next.js + MDX + Supabase QA로 변경
+- .claude/commands/dev-cycle.md: CCAFup 개발 사이클로 변경
+- .claude/commands/summit.md: 미세 수정
+- .claude/commands/summitdocs.md: 미세 수정
+
+### 팀 프로필
+- .claude/meeting-team-profiles.md: 8인 팀 전체 CCAFup 프로젝트 컨텍스트로 재작성
+
+### 새로 추가된 파일 (Phase 1 MVP)
+- content/ko/domains/*.mdx: 5개 도메인 MDX 콘텐츠 (ko)
+- content/ko/scenarios/*.mdx: 시나리오 학습 콘텐츠
+- messages/ko.json, messages/en.json: 다국어 메시지 파일
+- src/app/[locale]/: locale 기반 라우팅 전체 페이지
+- src/app/[locale]/domains/: 도메인 목록 + 상세 페이지
+- src/app/[locale]/scenarios/: 시나리오 목록 + 상세 페이지
+- src/app/[locale]/exam/: 시험 정보 (overview, info, faq, day-guide, partner)
+- src/app/[locale]/glossary/: 용어 사전
+- src/app/[locale]/prep/: 학습 준비 (roadmap, cheatsheet)
+- src/app/[locale]/resources/: 리소스
+- src/app/[locale]/privacy/: 개인정보처리방침
+- src/app/[locale]/terms/: 이용약관
+- src/components/layout/gnb.tsx: GNB 내비게이션
+- src/components/layout/footer.tsx: 푸터
+- src/components/content/callout.tsx: MDX 콜아웃 컴포넌트
+- src/components/content/mdx-components.tsx: MDX 커스텀 컴포넌트
+- src/components/providers/theme-provider.tsx: 다크모드 테마 프로바이더
+- src/components/subscribe-form.tsx: 이메일 구독 폼
+- src/actions/subscribe.ts: 구독 Server Action
+- src/i18n/request.ts: next-intl 요청 설정
+- src/i18n/routing.ts: next-intl 라우팅 설정
+- src/lib/mdx.ts: MDX 파싱 유틸리티
+- src/lib/supabase/client.ts: Supabase 클라이언트
+- src/lib/supabase/server.ts: Supabase 서버 클라이언트
+- src/middleware.ts: next-intl 미들웨어
+- src/app/robots.ts: SEO robots.txt
+- src/app/sitemap.ts: SEO sitemap
+
+### 설정 파일 변경
+- eslint.config.mjs: CCAFup 린트 규칙 적용
+- next.config.ts: next-intl 플러그인 추가
+- package.json: 의존성 추가 (next-intl, next-mdx-remote, next-themes 등)
+- pnpm-lock.yaml: 락파일 업데이트
+- tailwind.config.ts: Stone+Indigo 테마 설정
+- tsconfig.json: 경로 별칭 설정
+- src/app/globals.css: CSS 변수 기반 테마 시스템
+- src/app/layout.tsx: 루트 레이아웃 (ThemeProvider, next-intl)
+
+### bkit 상태 파일
+- .bkit/state/memory.json: 에이전트 메모리 업데이트
+- .bkit/state/pdca-status.json: PDCA 상태 업데이트
+- .bkit/state/dev-cycle-status.json: 개발 사이클 상태 (신규)
+- .bkit/runtime/agent-state.json: 에이전트 런타임 상태 (신규)
+- docs/dev-cycle/: 개발 사이클 문서 (신규)
+
+## 상세 변경 내역
+
+### [프로젝트 마이그레이션]
+- LAMDiceBot (Electron) → CCAFup (Next.js) 전환
+- .claude/ 전체 스킬/커맨드/프로필을 CCAFup 프로젝트 컨텍스트로 재작성
+- 이전 프로젝트 전용 커맨드 6개 삭제 (sound, vehicle 관련)
+- 이유: 완전히 다른 프로젝트이므로 이전 설정이 무의미
+
+### [다국어 시스템]
+- next-intl 기반 다국어 라우팅 구현
+- /ko, /en 경로 자동 생성
+- 미들웨어에서 locale 감지 + 리다이렉트
+
+### [콘텐츠 시스템]
+- MDX 기반 정적 콘텐츠 시스템 구축
+- next-mdx-remote로 서버사이드 MDX 렌더링
+- content/{locale}/{category}/{slug}.mdx 구조
+
+### [테마 시스템]
+- CSS 변수 기반 Stone+Indigo 테마
+- next-themes로 다크모드 토글
+- hex 하드코딩 대신 시맨틱 클래스 (bg-raised, text-foreground 등)
+
+### [인증/DB]
+- Supabase Client SDK (@supabase/ssr) 설정
+- 이메일 구독 Server Action 구현
+- Phase 1은 subscribers 테이블만 사용
+
+========================================

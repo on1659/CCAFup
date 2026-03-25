@@ -1,8 +1,29 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-03-24T14:18:49.106Z",
+  "lastUpdated": "2026-03-25T03:55:06.088Z",
   "activeFeatures": [
-    "CCAFup"
+    "CCAFup",
+    "i18n",
+    "providers",
+    "[locale]",
+    "layout",
+    "overview",
+    "info",
+    "partner",
+    "day-guide",
+    "faq",
+    "domains",
+    "[slug]",
+    "scenarios",
+    "glossary",
+    "roadmap",
+    "cheatsheet",
+    "resources",
+    "privacy",
+    "terms",
+    "content",
+    "supabase",
+    "actions"
   ],
   "primaryFeature": "CCAFup",
   "features": {
@@ -15,9 +36,282 @@
       "documents": {},
       "timestamps": {
         "started": "2026-03-24T14:16:43.082Z",
-        "lastUpdated": "2026-03-24T14:18:49.106Z"
+        "lastUpdated": "2026-03-25T03:52:14.380Z"
       },
-      "lastFile": "D:\\Work\\vibe\\CCAFup\\tailwind.config.ts"
+      "lastFile": "d:\\Work\\vibe\\CCAFup\\src\\components\\subscribe-form.tsx"
+    },
+    "i18n": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:22:57.597Z",
+        "lastUpdated": "2026-03-24T14:22:59.486Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\i18n\\request.ts"
+    },
+    "providers": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:23:24.514Z",
+        "lastUpdated": "2026-03-24T14:23:24.514Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\components\\providers\\theme-provider.tsx"
+    },
+    "[locale]": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:23:29.621Z",
+        "lastUpdated": "2026-03-25T03:52:36.645Z"
+      },
+      "lastFile": "d:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\page.tsx"
+    },
+    "layout": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:23:55.238Z",
+        "lastUpdated": "2026-03-25T03:52:58.122Z"
+      },
+      "lastFile": "d:\\Work\\vibe\\CCAFup\\src\\components\\layout\\gnb.tsx"
+    },
+    "overview": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:25:50.332Z",
+        "lastUpdated": "2026-03-24T14:25:50.332Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\exam\\overview\\page.tsx"
+    },
+    "info": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:25:58.833Z",
+        "lastUpdated": "2026-03-24T14:25:58.833Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\exam\\info\\page.tsx"
+    },
+    "partner": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:26:06.347Z",
+        "lastUpdated": "2026-03-24T14:26:06.347Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\exam\\partner\\page.tsx"
+    },
+    "day-guide": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:26:14.930Z",
+        "lastUpdated": "2026-03-24T14:26:14.930Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\exam\\day-guide\\page.tsx"
+    },
+    "faq": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:26:26.918Z",
+        "lastUpdated": "2026-03-24T14:26:26.918Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\exam\\faq\\page.tsx"
+    },
+    "domains": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:26:39.352Z",
+        "lastUpdated": "2026-03-24T14:26:39.352Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\domains\\page.tsx"
+    },
+    "[slug]": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:26:56.132Z",
+        "lastUpdated": "2026-03-25T03:50:41.727Z"
+      },
+      "lastFile": "d:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\scenarios\\[slug]\\page.tsx"
+    },
+    "scenarios": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:27:09.737Z",
+        "lastUpdated": "2026-03-24T14:27:09.737Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\scenarios\\page.tsx"
+    },
+    "glossary": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:27:41.446Z",
+        "lastUpdated": "2026-03-24T14:27:41.446Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\glossary\\page.tsx"
+    },
+    "roadmap": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:27:58.769Z",
+        "lastUpdated": "2026-03-24T14:27:58.769Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\prep\\roadmap\\page.tsx"
+    },
+    "cheatsheet": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:28:12.223Z",
+        "lastUpdated": "2026-03-24T14:28:12.223Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\prep\\cheatsheet\\page.tsx"
+    },
+    "resources": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:28:22.156Z",
+        "lastUpdated": "2026-03-24T14:28:22.156Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\resources\\page.tsx"
+    },
+    "privacy": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:28:33.440Z",
+        "lastUpdated": "2026-03-24T14:28:33.440Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\privacy\\page.tsx"
+    },
+    "terms": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-24T14:28:45.489Z",
+        "lastUpdated": "2026-03-24T14:28:45.489Z"
+      },
+      "lastFile": "D:\\Work\\vibe\\CCAFup\\src\\app\\[locale]\\terms\\page.tsx"
+    },
+    "content": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-25T03:48:03.460Z",
+        "lastUpdated": "2026-03-25T03:55:06.087Z"
+      },
+      "lastFile": "d:\\Work\\vibe\\CCAFup\\src\\components\\content\\mdx-components.tsx"
+    },
+    "supabase": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-25T03:51:40.840Z",
+        "lastUpdated": "2026-03-25T03:51:42.447Z"
+      },
+      "lastFile": "d:\\Work\\vibe\\CCAFup\\src\\lib\\supabase\\client.ts"
+    },
+    "actions": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-03-25T03:51:45.411Z",
+        "lastUpdated": "2026-03-25T03:51:45.411Z"
+      },
+      "lastFile": "d:\\Work\\vibe\\CCAFup\\src\\actions\\subscribe.ts"
     }
   },
   "pipeline": {
@@ -28,7 +322,7 @@
   "session": {
     "startedAt": "2026-03-24T14:10:42.274Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-03-24T14:18:49.106Z"
+    "lastActivity": "2026-03-25T03:55:06.088Z"
   },
   "history": [
     {
@@ -40,6 +334,324 @@
     {
       "timestamp": "2026-03-24T14:18:49.106Z",
       "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:22:57.597Z",
+      "feature": "i18n",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:22:59.486Z",
+      "feature": "i18n",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:23:00.936Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:23:22.606Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:23:24.514Z",
+      "feature": "providers",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:23:29.622Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:23:55.238Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:23:58.847Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:24:15.975Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:25:50.332Z",
+      "feature": "overview",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:25:58.833Z",
+      "feature": "info",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:26:06.347Z",
+      "feature": "partner",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:26:14.930Z",
+      "feature": "day-guide",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:26:26.918Z",
+      "feature": "faq",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:26:39.352Z",
+      "feature": "domains",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:26:56.132Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:27:09.737Z",
+      "feature": "scenarios",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:27:27.742Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:27:41.446Z",
+      "feature": "glossary",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:27:58.769Z",
+      "feature": "roadmap",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:28:12.223Z",
+      "feature": "cheatsheet",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:28:22.156Z",
+      "feature": "resources",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:28:33.440Z",
+      "feature": "privacy",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:28:45.489Z",
+      "feature": "terms",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:30:09.385Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:31:14.408Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:31:15.968Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:31:59.499Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-24T14:32:00.760Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:47:38.616Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:48:03.460Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:48:14.267Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:50:21.062Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:50:41.727Z",
+      "feature": "[slug]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:51:40.840Z",
+      "feature": "supabase",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:51:42.447Z",
+      "feature": "supabase",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:51:45.411Z",
+      "feature": "actions",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:51:52.547Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:02.872Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:04.136Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:14.380Z",
+      "feature": "CCAFup",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:17.816Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:20.479Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:23.136Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:29.797Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:36.645Z",
+      "feature": "[locale]",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:48.386Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:54.065Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:52:58.122Z",
+      "feature": "layout",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:54:10.737Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:54:30.845Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:54:35.046Z",
+      "feature": "content",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-03-25T03:55:06.087Z",
+      "feature": "content",
       "phase": "do",
       "action": "updated"
     }

@@ -41,14 +41,14 @@
 선택된 팀원 수만큼 **Agent 도구를 동시에(한 번에) 실행**하세요.
 
 각 팀원에 해당하는 스킬 파일 매핑:
-- 지민 (PD) → `skill-pd.md`
-- 현우 (기획자①) → `skill-planner-research.md`
-- 소연 (기획자②) → `skill-planner-strategy.md`
-- 태준 (개발자① BE) → `skill-backend.md`
-- 미래 (개발자② FE) → `skill-frontend.md`
-- 윤서 (QA) → `skill-qa.md`
-- 다은 (UI) → `skill-ui.md`
-- 승호 (UX) → `skill-ux.md`
+- 지민 (PD) → `skill-pd.md` — Phase 범위, 일정, Go/No-Go
+- 현우 (콘텐츠기획) → `skill-planner-research.md` — CCA-F 콘텐츠, 학습 경로
+- 소연 (성장기획) → `skill-planner-strategy.md` — SEO, 전환, KPI
+- 태준 (백엔드) → `skill-backend.md` — Supabase, Prisma, Server Actions
+- 미래 (프론트엔드) → `skill-frontend.md` — Next.js, MDX, Tailwind
+- 윤서 (QA) → `skill-qa.md` — 빌드, Lighthouse, 접근성
+- 다은 (UI) → `skill-ui.md` — Stone+Indigo, CSS 변수, 다크모드
+- 승호 (UX) → `skill-ux.md` — 학습 UX, 수험생 여정, WCAG
 
 각 팀원 에이전트 프롬프트 구조:
 ```

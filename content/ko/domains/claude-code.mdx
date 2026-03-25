@@ -1,0 +1,50 @@
+---
+title: "Claude Code Configuration & Workflows"
+description: "Claude Code CLI 설정, 워크플로우 자동화, 개발 환경 통합"
+weight: 20
+order: 2
+---
+
+## 개요
+
+Claude Code 도메인은 CCA-F 시험의 **20%** 비중을 차지합니다. Claude Code CLI의 설정, 최적화, 팀 협업 워크플로우에 대한 실무적 지식을 평가합니다.
+
+## 핵심 개념
+
+### Claude Code CLI 설정
+
+Claude Code는 터미널에서 직접 Claude와 상호작용할 수 있는 CLI 도구입니다.
+
+- **CLAUDE.md**: 프로젝트별 규칙과 컨텍스트를 정의하는 핵심 파일
+- **설정 계층**: 글로벌 → 프로젝트 → 로컬 순으로 설정이 오버라이드
+- **Hooks**: 도구 호출 전후에 실행되는 자동화 스크립트
+
+<Tip title="시험 포인트">
+CLAUDE.md의 위치와 적용 범위(프로젝트 루트 vs 하위 디렉토리)에 대한 문제가 자주 출제됩니다.
+</Tip>
+
+### 워크플로우 자동화
+
+반복적인 개발 작업을 Claude Code로 자동화하는 패턴입니다.
+
+- **커밋 자동화**: 변경사항 분석 → 커밋 메시지 생성 → 커밋
+- **코드 리뷰**: PR 변경사항 분석 → 이슈 식별 → 피드백 작성
+- **테스트 생성**: 코드 분석 → 테스트 케이스 자동 생성
+
+### 개발 환경 통합
+
+IDE, CI/CD 파이프라인과의 통합 패턴을 다룹니다.
+
+| 통합 대상 | 방법 | 주요 활용 |
+|----------|------|---------|
+| VS Code | 확장 프로그램 | 인라인 코드 제안 |
+| GitHub Actions | CLI 호출 | 자동 코드 리뷰 |
+| Git Hooks | pre-commit | 커밋 전 검증 |
+
+## 출제 포인트 요약
+
+1. CLAUDE.md 설정 항목과 우선순위
+2. Hooks의 종류와 실행 시점
+3. 권한 모드(allowlist/denylist) 설정
+4. CI/CD 파이프라인에서의 Claude Code 활용
+5. 팀 협업 시 설정 공유 방법

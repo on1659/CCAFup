@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "CCAFup — CCA-F 시험 준비 허브",
+    "description": "CCA-F(Claude Certified Architect - Foundations) 시험 준비를 위한 비공식 커뮤니티 정보 허브"
+  },
+  "nav": {
+    "home": "홈",
+    "examOverview": "시험 개요",
+    "examInfo": "시험 정보",
+    "partner": "파트너 가이드",
+    "dayGuide": "시험 당일",
+    "faq": "FAQ",
+    "domains": "도메인",
+    "scenarios": "시나리오",
+    "glossary": "용어 사전",
+    "roadmap": "준비 가이드",
+    "cheatsheet": "치트시트",
+    "resources": "리소스",
+    "quiz": "모의시험",
+    "dashboard": "대시보드",
+    "community": "커뮤니티"
+  },
+  "common": {
+    "unofficial": "Unofficial",
+    "comingSoon": "Coming Soon",
+    "search": "검색...",
+    "searchPlaceholder": "콘텐츠 검색 (Cmd+K)",
+    "darkMode": "다크 모드",
+    "lightMode": "라이트 모드",
+    "language": "한국어",
+    "readMore": "더 보기",
+    "download": "다운로드",
+    "share": "공유",
+    "bookmark": "북마크",
+    "subscribe": "구독하기",
+    "emailPlaceholder": "이메일 주소를 입력하세요",
+    "subscribeSuccess": "구독이 완료되었습니다!",
+    "subscribeCta": "매일 아침 오늘의 문제 받기",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관"
+  },
+  "home": {
+    "hero": "CCA-F 시험, 체계적으로 준비하세요",
+    "heroSub": "커뮤니티 주도의 비공식 시험 준비 정보 허브",
+    "questions": "60문항",
+    "duration": "120분",
+    "passingScore": "720점 합격",
+    "startPrep": "준비 시작하기",
+    "viewDomains": "도메인 살펴보기"
+  },
+  "examOverview": {
+    "title": "시험 개요",
+    "description": "CCA-F(Claude Certified Architect - Foundations) 시험의 전체 구조와 핵심 정보를 한눈에 확인하세요."
+  },
+  "examInfo": {
+    "title": "시험 정보",
+    "description": "시험 형식, 등록 절차, 비용, 합격 기준 등 CCA-F 시험에 대한 상세 정보를 확인하세요."
+  },
+  "partner": {
+    "title": "파트너 네트워크 가이드",
+    "description": "Anthropic 파트너 네트워크를 통한 시험 접수 및 준비 방법을 안내합니다."
+  },
+  "dayGuide": {
+    "title": "시험 당일 가이드",
+    "description": "시험 당일 준비사항, 환경 설정, 주의사항 등 시험 당일에 필요한 모든 정보를 안내합니다."
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "description": "CCA-F 시험 준비에 대해 자주 묻는 질문과 답변을 확인하세요."
+  },
+  "domains": {
+    "title": "도메인 목록",
+    "description": "CCA-F 시험을 구성하는 5개 도메인의 출제 비중과 핵심 내용을 확인하세요.",
+    "weight": "출제 비중"
+  },
+  "domainDetail": {
+    "title": "도메인 상세",
+    "description": "선택한 도메인의 상세 학습 내용과 핵심 개념을 확인하세요.",
+    "backToList": "도메인 목록으로 돌아가기",
+    "weight": "출제 비중"
+  },
+  "scenarios": {
+    "title": "시나리오 목록",
+    "description": "CCA-F 시험에 출제되는 실제 활용 시나리오를 학습하세요.",
+    "viewScenario": "시나리오 보기"
+  },
+  "scenarioDetail": {
+    "title": "시나리오 상세",
+    "description": "선택한 시나리오의 상세 구현 방법과 핵심 포인트를 확인하세요.",
+    "backToList": "시나리오 목록으로 돌아가기"
+  },
+  "glossary": {
+    "title": "용어 사전",
+    "description": "CCA-F 시험에 나오는 주요 용어와 개념을 정리했습니다.",
+    "searchTerms": "용어 검색..."
+  },
+  "roadmap": {
+    "title": "준비 가이드",
+    "description": "CCA-F 시험 합격을 위한 단계별 학습 로드맵과 준비 전략을 안내합니다."
+  },
+  "cheatsheet": {
+    "title": "치트시트",
+    "description": "시험 직전 빠르게 복습할 수 있는 핵심 요약 치트시트입니다."
+  },
+  "resources": {
+    "title": "리소스 & 링크",
+    "description": "CCA-F 시험 준비에 유용한 공식 문서, 학습 자료, 커뮤니티 링크를 모았습니다."
+  },
+  "privacy": {
+    "title": "개인정보처리방침",
+    "description": "CCAFup의 개인정보 수집, 이용, 보호에 대한 정책을 안내합니다."
+  },
+  "terms": {
+    "title": "이용약관",
+    "description": "CCAFup 서비스 이용에 관한 약관 및 조건을 안내합니다."
+  },
+  "footer": {
+    "disclaimer": "CCAFup은 커뮤니티 주도의 비공식 정보 허브이며, Anthropic과 공식 연관이 없습니다.",
+    "copyright": "© 2026 CCAFup. All rights reserved."
+  }
+}

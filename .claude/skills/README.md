@@ -6,14 +6,14 @@
 
 | 파일 | 역할 | 팀원 | 주요 내용 |
 |------|------|------|---------|
-| `skill-pd.md` | 프로젝트 디렉터 | 지민 | Go/No-Go 기준, 리스크 매트릭스, ICE 점수, 스코프 크립 |
-| `skill-planner-research.md` | 기획자 (리서치) | 현우 | 사용자 스토리, JTBD, MoSCoW, 검증 방법 |
-| `skill-planner-strategy.md` | 기획자 (전략) | 소연 | 비즈니스 임팩트, KPI, 경쟁 포지셔닝, 로드맵 |
-| `skill-backend.md` | 개발자 (백엔드) | 태준 | API 설계, 보안 체크리스트, 성능 기준, 데이터 모델 |
-| `skill-frontend.md` | 개발자 (프론트엔드) | 미래 | 컴포넌트 설계, 상태 관리, Electron IPC, 성능 최적화 |
-| `skill-qa.md` | QA | 윤서 | 테스트 피라미드, 엣지케이스, DoD, 회귀 체크리스트 |
-| `skill-ui.md` | UI 디자이너 | 다은 | 디자인 시스템, 시각적 계층, 빈/로딩/에러 상태 |
-| `skill-ux.md` | UX 디자이너 | 승호 | 사용자 여정, 인터랙션, WCAG 접근성, 인지 부하 |
+| `skill-pd.md` | 프로젝트 디렉터 | 지민 | Go/No-Go 기준, Phase 범위, 리스크 매트릭스, 스코프 크립 |
+| `skill-planner-research.md` | 기획자 (콘텐츠 전략) | 현우 | CCA-F 콘텐츠, 학습 경로, MDX 구조, 도메인 분류 |
+| `skill-planner-strategy.md` | 기획자 (성장 전략) | 소연 | SEO, 전환 퍼널, KPI, 경쟁 포지셔닝 |
+| `skill-backend.md` | 개발자 (백엔드) | 태준 | Supabase, Prisma, Server Actions, RLS, DB 스키마 |
+| `skill-frontend.md` | 개발자 (프론트엔드) | 미래 | Next.js App Router, MDX, Tailwind, next-intl |
+| `skill-qa.md` | QA | 윤서 | 빌드 검증, Lighthouse, 접근성, 크로스브라우저 |
+| `skill-ui.md` | UI 디자이너 | 다은 | Stone+Indigo 테마, CSS 변수, 다크모드, 컴포넌트 |
+| `skill-ux.md` | UX 디자이너 | 승호 | 학습 UX, 수험생 여정, WCAG, 정보구조 |
 
 ## 작동 원리
 
@@ -35,5 +35,5 @@ meeting-team 실행
 추가할 수 있는 내용:
 - 역할별 특수 프레임워크
 - 프로젝트 특화 체크리스트
-- 기술 스택 가이드라인
+- CCA-F 도메인 지식
 - 이전 회의에서 나온 결정 사항 (컨텍스트)

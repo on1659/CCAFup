@@ -38,6 +38,6 @@ const config: Config = {
       zIndex: { toc: "10", sidebar: "20", header: "30", dropdown: "40", overlay: "50", modal: "55", toast: "60", fullscreen: "70" },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

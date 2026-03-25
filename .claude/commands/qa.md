@@ -2,180 +2,99 @@
 description: "Run QA verification. Automatically performed after code changes when user says 'verify', 'run QA', or 'qa'."
 ---
 
-# QA Agent - Automated Verification After Code Changes
+# QA Agent - CCAFup 자동 검증
 
-A 4-step QA process designed based on failure cases. Must be performed in order with each step's results reported.
+Next.js + Supabase + MDX 프로젝트에 맞춘 4단계 QA 프로세스. 순서대로 실행하고 결과를 보고한다.
 
-## Step 1: Detect Changed Files
+## Step 1: 변경 파일 감지
 
 ```bash
 git diff --name-only
 git diff --cached --name-only
 ```
 
-Check the list of changed files and determine the QA level based on the criteria below:
+변경된 파일을 확인하고 QA 레벨을 결정:
 
-| Changed File | QA Level |
-|--------------|----------|
-| `server.js` | Level 2 (Server verification) |
-| `*.html` (game pages) | Level 3 (Browser runtime) |
-| `*-shared.js` (common modules) | Level 4 (Cross-game) |
-| Other `.js` files | Level 1 (Static verification) |
+| 변경 파일 | QA 레벨 |
+|-----------|---------|
+| `src/app/**` (페이지/레이아웃) | Level 3 (빌드 + 렌더링) |
+| `src/components/**` | Level 2 (빌드 + 타입) |
+| `content/**/*.mdx` | Level 3 (MDX 파싱 + 빌드) |
+| `messages/*.json` | Level 2 (빌드 + 누락 키 확인) |
+| `tailwind.config.*`, `globals.css` | Level 3 (다크모드 확인) |
+| `middleware.ts`, `i18n/**` | Level 3 (다국어 라우팅) |
+| 기타 `.ts/.tsx` | Level 1 (타입 체크) |
 
-## Step 2: Static Verification (Level 1)
+## Step 2: 정적 검증 (Level 1)
 
-### 2-1. Node.js Syntax Check
-When `server.js` is changed:
+### 2-1. TypeScript 타입 체크
 ```bash
-node -c server.js
+npx tsc --noEmit
 ```
 
-### 2-2. Browser Dangerous Pattern Inspection ⭐ Important
-Inspect the following patterns in changed `.js` and `.html` files using grep.
-These patterns cannot be detected by Node.js syntax check and only cause runtime errors in browsers.
+### 2-2. ESLint 검사
+```bash
+pnpm lint
+```
 
-**Dangerous patterns to check:**
+### 2-3. 위험 패턴 검사
+변경된 파일에서 다음 패턴을 Grep 도구로 검사:
 
-| Pattern | Problem | Correct Code |
-|---------|---------|--------------|
-| `document.hasAttribute(` | Method doesn't exist on document | `document.documentElement.hasAttribute(` |
-| `document.setAttribute(` (except `document.documentElement.setAttribute`) | Method doesn't exist on document | `document.documentElement.setAttribute(` |
-| `document.style` (when not followed by `.`) | Property doesn't exist on document | `document.body.style` |
-| `document.classList` | Property doesn't exist on document | `document.documentElement.classList` |
+| 패턴 | 문제 | 올바른 코드 |
+|------|------|------------|
+| `bg-stone-` / `text-stone-` | hex 하드코딩 (다크모드 깨짐) | CSS 변수 클래스 (bg-raised 등) |
+| `#[0-9a-fA-F]{3,8}` (CSS/TSX 내) | hex 하드코딩 | CSS 변수 사용 |
+| `"use client"` 없이 useState/useEffect | Server Component에서 클라이언트 훅 | "use client" 추가 |
+| `process.env.SUPABASE_SERVICE_ROLE` (클라이언트) | service_role 키 노출 | NEXT_PUBLIC_ 없는 변수는 서버 전용 |
 
-Inspect changed files using the Grep tool. Fix immediately if dangerous patterns are found.
+### 2-4. 호출 체인 추적
+변경된 함수가 어디서 호출되는지 추적. 영향 범위 파악.
 
-### 2-3. Call Chain Tracing
-Trace where the changed function is called from. Identify the cascade failure scope when an error occurs.
-Example: `setupDragAndDrop()` error → `renderReadyUsers()` → `setReadyUsers()` → entire `initializeGameScreen()` crashes
-
-## Step 3: Server Verification (Level 2)
-
-When `server.js` or server-related files are changed:
+## Step 3: 빌드 검증 (Level 2)
 
 ```bash
-node server.js
+pnpm build
 ```
-- Run with 5-second timeout
-- Check for "listening" or normal boot message
-- PASS if no errors, FAIL + report error content if errors exist
-- If port conflict, test with another port (e.g., 3199)
+- 빌드 성공 → Level 3로
+- 빌드 실패 → CRITICAL 버그, 즉시 수정
+- MDX 파싱 에러 → 해당 MDX 파일 수정
 
-## Step 4: Browser Console Error Check (Level 3) ⭐ Core
+## Step 4: 런타임 검증 (Level 3)
 
-**This step is the most important.** Previous QA missed this step and failed to catch the `document.hasAttribute` error.
+### 4-1. 다국어 라우팅 확인
+- `/ko` 와 `/en` 경로가 모두 빌드에 포함됐는지 확인
+- messages/*.json에 누락된 번역 키가 없는지 확인
 
-### Using Automation Script:
-```bash
-node AutoTest/console-error-check.js --game all
-```
+### 4-2. 다크모드 확인 (CSS 변경 시)
+- CSS 변수가 `:root`와 `.dark` 양쪽에 정의됐는지 확인
+- 변경된 컴포넌트에서 시맨틱 클래스 사용 여부 확인
 
-### Manual Procedure When Automation Not Available:
-1. With server running, access each game page in browser
-2. Open Developer Tools (F12) → Console tab
-3. Check for console errors on page load
-4. Click create room button and check for console errors
-5. FAIL if there are red error messages
+### 4-3. MDX 콘텐츠 확인 (콘텐츠 변경 시)
+- frontmatter 형식이 올바른지 확인
+- 커스텀 컴포넌트가 mdx-components.tsx에 정의됐는지 확인
 
-### Level 4 (Cross-game):
-When common modules (`*-shared.js`) are changed, check all 3 games:
-- `dice-game-multiplayer.html`
-- `roulette-game-multiplayer.html`
-- `horse-race-multiplayer.html`
-
-## Step 4-1: Functional Testing (Level 3+) ⭐ New
-
-**Even without console errors, functionality may not work.**
-When common modules are changed, **actual button click testing in all 3 games** is required.
-
-### Test Using MCP Browser or Manually:
-
-Perform the following scenarios by **actually clicking** on each game page.
-
-### Module-specific Functional Test Scenarios
-
-#### OrderModule (order-shared.js)
-| Scenario | Action | Expected Result |
-|----------|--------|-----------------|
-| Start taking orders | Click `#startOrderButton` | End button appears, input enabled |
-| Save order | Enter input and click save button | Green flash feedback |
-| Order list (in progress) | Click `#showOrderListButton` | Modal appears |
-| Order list (not started) | Click `#showOrderListButton` | Alert shows "Only available while taking orders..." |
-| End taking orders | Click `#endOrderButton` | Input disabled, alert shown |
-
-#### ReadyModule (ready-shared.js)
-| Scenario | Action | Expected Result |
-|----------|--------|-----------------|
-| Ready button toggle | Click `#readyButton` | State changes (Ready/Not Ready) |
-| Drag and drop (host) | Drag user | Order changes |
-
-#### ChatModule (chat-shared.js)
-| Scenario | Action | Expected Result |
-|----------|--------|-----------------|
-| Send chat | Enter message and send | Message appears in chat window |
-| Emoticon reaction | Hover message → Click emoticon | Reaction count increases |
-
-### Test Methods
-
-**Method 1: Using MCP Browser**
-```
-browser_navigate → Access page
-browser_fill_form → Enter name
-browser_click → Click button
-browser_snapshot → Check result
-```
-
-**Method 2: Manual Testing**
-1. Access each game page in browser
-2. Create or join room
-3. Perform actions in scenario table above
-4. Verify results match expected outcomes
-
-### Functional Test Result Report Format
-
-```
-### Level 3+: Functional Testing
-- OrderModule:
-  - Start taking orders: ✅/❌
-  - Order list button: ✅/❌
-  - End taking orders: ✅/❌
-- ReadyModule:
-  - Ready button: ✅/❌
-- ChatModule:
-  - Send chat: ✅/❌
-```
-
-## Step 5: Result Report
-
-After completing all steps, report in the following format:
+## Step 5: 결과 보고
 
 ```
 ## QA Results
 
-Changed files: (list)
+변경 파일: (목록)
 QA Level: Level X
 
-### Level 1: Static Verification
-- Syntax check: ✅ PASS / ❌ FAIL
-- Dangerous patterns: ✅ None / ❌ Found (details)
-- Call chain: (impact scope)
+### Level 1: 정적 검증
+- TypeScript: PASS / FAIL
+- ESLint: PASS / FAIL
+- 위험 패턴: 없음 / 발견 (상세)
+- 호출 체인: (영향 범위)
 
-### Level 2: Server Verification
-- Server boot: ✅ PASS / ❌ FAIL
+### Level 2: 빌드 검증
+- Next.js 빌드: PASS / FAIL
+- MDX 파싱: PASS / FAIL
 
-### Level 3: Browser Runtime
-- Page load: ✅ No errors / ❌ Errors found
-- Room creation: ✅ No errors / ❌ Errors found
-- Functionality: ✅ Normal / ❌ Abnormal
+### Level 3: 런타임 검증
+- 다국어: PASS / FAIL
+- 다크모드: PASS / FAIL
+- MDX 렌더링: PASS / FAIL
 
-### Final Verdict: ✅ PASS / ❌ FAIL
+### Final: PASS / FAIL
 ```
-
-## Reference: Common Module List
-
-| Module | Used In | Caution on Change | Functional Test |
-|--------|---------|-------------------|-----------------|
-| `order-shared.js` | Dice, Roulette, Horse Race | Level 4 required | Start/End order taking, Order list button |
-| `ready-shared.js` | Dice, Roulette, Horse Race | Level 4 required | Ready button, Drag and drop |
-| `chat-shared.js` | Dice, Roulette, Horse Race | Level 4 required | Send chat, Emoticon reaction |
-| `server.js` | All | Level 2 + Level 3 | Verify socket event operation |
