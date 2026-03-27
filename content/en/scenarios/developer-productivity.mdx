@@ -1,0 +1,72 @@
+---
+title: "Developer Productivity with Claude"
+description: "Integrating Claude into developer workflows — IDE, code review, debugging, documentation"
+order: 4
+---
+
+## Scenario Overview
+
+A development team integrates Claude into their daily workflows to automate code review, debugging, refactoring, and documentation — maximizing developer productivity through IDE extensions, CLI tools, and CI/CD pipelines.
+
+## Related Domains
+
+- **Claude Code Configuration & Workflows** (20%): CLI tools, workflow automation
+- **Prompt Engineering** (20%): Task-specific prompt design
+- **Agentic Architecture** (27%): Development workflow agent design
+- **Tool Design & MCP** (18%): IDE integration, dev tool connectivity
+
+## Walkthrough
+
+### Step 1: Development Environment Integration
+
+Set up three touchpoints for Claude in the dev environment:
+
+| Touchpoint | Tool | Use Cases |
+|------------|------|-----------|
+| IDE | VS Code / JetBrains extension | Inline code suggestions, refactoring |
+| CLI | Claude Code | Complex code generation, project modifications |
+| CI/CD | GitHub Actions | Automated code review, test generation |
+
+### Step 2: Automated Code Review
+
+When a Pull Request is created, automatically perform code review:
+
+1. **Change analysis**: Parse diffs, determine impact scope
+2. **Rule-based checks**: Coding conventions, security vulnerabilities, performance
+3. **Context-based review**: Business logic consistency, design pattern adherence
+4. **Feedback writing**: Specific improvement suggestions + code examples
+
+<Tip title="Design Point">
+Code review agents must distinguish between "blocking" and "suggestion" feedback. Security vulnerabilities are blocking; style improvements are suggestions. The exam tests review feedback prioritization.
+</Tip>
+
+### Step 3: Debugging Support
+
+When errors occur, Claude assists with debugging:
+
+- **Error log analysis**: Parse stack traces, estimate root causes
+- **Related code search**: Analyze code around the error location
+- **Fix suggestions**: Propose specific code changes
+- **Test generation**: Create tests for bug reproduction and fix verification
+
+### Step 4: Automated Documentation
+
+Update documentation automatically as code changes:
+
+| Doc Type | Method | Trigger |
+|----------|--------|---------|
+| API docs | Extract from code comments | API file changes |
+| README | Reflect feature changes | Feature PR merge |
+| Changelog | Auto-generate from commits | Release |
+
+<Warning title="Trap Question">
+The biggest risk in Claude-powered code generation is hallucination — generating non-existent APIs or libraries. Always include compile/build verification steps.
+</Warning>
+
+## Key Exam Topics
+
+1. Appropriate use cases for each touchpoint (IDE, CLI, CI/CD)
+2. Blocking vs suggestion distinction in automated code review
+3. Importance of context provision in debugging support
+4. Accuracy assurance for auto-generated documentation
+5. When to apply Human-in-the-Loop in developer workflows

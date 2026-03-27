@@ -113,6 +113,25 @@
     "title": "Terms of Service",
     "description": "Review the terms and conditions for using CCAFup services."
   },
+  "quiz": {
+    "title": "Practice Quiz",
+    "description": "Test your CCA-F exam readiness with practice questions. Filter by domain and difficulty."
+  },
+  "sidebar": {
+    "exam": "Exam",
+    "learn": "Learn",
+    "prep": "Prep"
+  },
+  "comingSoon": {
+    "badge": "Coming Soon",
+    "quizTitle": "Practice Quiz",
+    "quizDesc": "Domain-based, scenario-based quizzes and full mock exams are coming soon.",
+    "dashboardTitle": "My Dashboard",
+    "dashboardDesc": "Track your D-day countdown, study progress, and score trends at a glance.",
+    "communityTitle": "Community",
+    "communityDesc": "Share experiences, ask questions, and find study groups — coming soon.",
+    "notify": "Get notified when it launches"
+  },
   "footer": {
     "disclaimer": "CCAFup is an unofficial community hub and is not affiliated with Anthropic.",
     "copyright": "© 2026 CCAFup. All rights reserved."

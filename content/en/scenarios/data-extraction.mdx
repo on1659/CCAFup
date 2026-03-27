@@ -1,0 +1,88 @@
+---
+title: "Structured Data Extraction"
+description: "Extracting structured data from unstructured text using JSON Schema, few-shot prompting, and validation loops"
+order: 6
+---
+
+## Scenario Overview
+
+Design a system that extracts structured data from unstructured text (emails, documents, web pages). JSON Schema defines the output format, combined with few-shot prompting and validation loops to ensure extraction accuracy.
+
+## Related Domains
+
+- **Prompt Engineering & Structured Output** (20%): JSON Schema, few-shot, validation
+- **Tool Design & MCP** (18%): Data source integration
+- **Context Management** (15%): Large document processing
+- **Agentic Architecture** (27%): Extraction-validation agent loop
+
+## Walkthrough
+
+### Step 1: Output Schema Definition
+
+Define the JSON Schema for extracted data before building the pipeline:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "company_name": { "type": "string" },
+    "contact_email": { "type": "string", "format": "email" },
+    "revenue": { "type": "number" },
+    "fiscal_year": { "type": "integer" },
+    "industry": {
+      "type": "string",
+      "enum": ["tech", "finance", "healthcare", "retail", "other"]
+    }
+  },
+  "required": ["company_name", "contact_email"]
+}
+```
+
+<Tip title="Design Point">
+Using `enum` in JSON Schema constrains extraction results to predefined values. Enum-based fields are far more stable for downstream processing than free text. The exam tests "schema design constraints."
+</Tip>
+
+### Step 2: Few-shot Prompt Design
+
+Include 2-3 examples to improve extraction accuracy:
+
+| Strategy | Examples | Advantage |
+|----------|----------|-----------|
+| Zero-shot | None — schema only | Quick setup |
+| Few-shot | 2-3 input/output pairs | Improved accuracy |
+| Many-shot | 5+ diverse examples | Edge case handling |
+
+### Step 3: Validation Loop
+
+Multi-layer validation system for extraction accuracy:
+
+1. **Schema validation**: JSON Schema conformance check (programmatic)
+2. **Format validation**: Email, date, currency format matching (regex)
+3. **Semantic validation**: Contextual reasonableness check (LLM re-verification)
+4. **Cross-field validation**: Inter-field consistency check (revenue vs company size)
+
+```
+Extract → Schema check → Format check → Pass: Save
+                                       → Fail: Re-extract (max 3 attempts)
+                                       → 3 failures: Manual review queue
+```
+
+### Step 4: Large Document Processing
+
+Strategies for documents exceeding the context window:
+
+- **Chunking**: Split documents into logical units (sections, pages)
+- **Map-Reduce**: Extract from each chunk, then merge results
+- **Priority processing**: Process key sections first, expand as needed
+
+<Warning title="Trap Question">
+JSON mode alone cannot guarantee extraction accuracy. Both schema validation (programmatic enforcement) and semantic validation (LLM-based) are necessary. When asked "which validation is more important?" — the answer is "both are essential."
+</Warning>
+
+## Key Exam Topics
+
+1. JSON Schema for output format control
+2. Few-shot example count and diversity decisions
+3. Programmatic validation vs LLM-based semantic validation roles
+4. Chunking strategies and result merging for large documents
+5. Retry and escalation strategies on extraction failure

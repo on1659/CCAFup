@@ -114,6 +114,25 @@
     "title": "이용약관",
     "description": "CCAFup 서비스 이용에 관한 약관 및 조건을 안내합니다."
   },
+  "quiz": {
+    "title": "모의시험",
+    "description": "CCA-F 시험 대비 연습 문제를 풀어보세요. 도메인별, 난이도별 필터를 활용하세요."
+  },
+  "sidebar": {
+    "exam": "시험",
+    "learn": "학습",
+    "prep": "준비"
+  },
+  "comingSoon": {
+    "badge": "Coming Soon",
+    "quizTitle": "모의시험 & 퀴즈",
+    "quizDesc": "도메인별, 시나리오별 퀴즈와 전체 모의시험이 곧 제공됩니다.",
+    "dashboardTitle": "내 대시보드",
+    "dashboardDesc": "D-day 카운트다운, 학습 진행률, 점수 추이를 한눈에 확인하세요.",
+    "communityTitle": "커뮤니티",
+    "communityDesc": "합격 후기, Q&A, 스터디 그룹 모집이 곧 시작됩니다.",
+    "notify": "출시되면 알림을 받으세요"
+  },
   "footer": {
     "disclaimer": "CCAFup은 커뮤니티 주도의 비공식 정보 허브이며, Anthropic과 공식 연관이 없습니다.",
     "copyright": "© 2026 CCAFup. All rights reserved."

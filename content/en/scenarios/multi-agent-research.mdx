@@ -1,0 +1,87 @@
+---
+title: "Multi-Agent Research System"
+description: "Building a multi-agent research system with hub-and-spoke orchestration and result synthesis"
+order: 3
+---
+
+## Scenario Overview
+
+Design a system where multiple specialized agents collaborate on large-scale research tasks. A central orchestrator decomposes the research question, dispatches to specialist agents running in parallel, and synthesizes their findings into a unified report.
+
+## Related Domains
+
+- **Agentic Architecture** (27%): Multi-agent orchestration, hub-and-spoke
+- **Context Management** (15%): Cross-agent context sharing
+- **Tool Design & MCP** (18%): External source search tools
+- **Prompt Engineering** (20%): Research question decomposition prompts
+
+## Walkthrough
+
+### Step 1: Architecture Design — Hub-and-Spoke
+
+The orchestrator (Hub) receives research questions and distributes to specialist agents (Spokes):
+
+```
+[Orchestrator]
+    ├── [Scholar Agent]     — Academic paper search
+    ├── [News Agent]        — Recent news collection
+    ├── [Code Agent]        — GitHub repository analysis
+    └── [Synthesis Agent]   — Result integration and report generation
+```
+
+### Step 2: Task Decomposition
+
+The orchestrator breaks complex research questions into sub-tasks:
+
+| Strategy | Description | Best For |
+|----------|-------------|----------|
+| Topic-based | Split one topic into sub-topics | Broad investigations |
+| Source-based | Assign agents per data source | Multi-source exploration |
+| Depth-based | Surface scan → deep analysis | Staged research |
+
+<Tip title="Design Point">
+Each sub-task must be independently executable. If tasks have dependencies, switch to sequential execution. The exam tests your ability to judge task dependencies.
+</Tip>
+
+### Step 3: Inter-Agent Communication
+
+Agent results must be transmitted in structured format:
+
+```json
+{
+  "agent": "scholar",
+  "status": "complete",
+  "findings": [
+    {
+      "source": "Paper Title",
+      "relevance": 0.92,
+      "summary": "Key finding",
+      "confidence": "high"
+    }
+  ],
+  "metadata": {
+    "sources_searched": 45,
+    "time_spent_ms": 12000
+  }
+}
+```
+
+### Step 4: Result Synthesis & Conflict Resolution
+
+When the Synthesis Agent aggregates findings:
+
+- **Consistent information**: Include with high confidence
+- **Conflicting information**: Cite both sources, rank by reliability
+- **Uncertain information**: Mark as "needs further verification"
+
+<Warning title="Trap Question">
+Halting the entire system when one agent fails is an anti-pattern. The correct approach is graceful degradation — generate partial results excluding the failed agent's output.
+</Warning>
+
+## Key Exam Topics
+
+1. Hub-and-spoke vs peer-to-peer pattern selection criteria
+2. Parallel vs sequential execution decisions during task decomposition
+3. Structured formats for inter-agent result communication
+4. Graceful degradation on partial failure
+5. Information conflict resolution during result synthesis

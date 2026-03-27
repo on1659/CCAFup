@@ -1,0 +1,73 @@
+---
+title: "Claude Code Configuration & Workflows"
+description: "CLAUDE.md configuration, slash commands, CI/CD integration, and workflow automation"
+weight: 20
+order: 2
+---
+
+## Overview
+
+Claude Code Configuration & Workflows accounts for **20%** of the CCA-F exam. This domain covers how to configure Claude Code for project-specific workflows, automate repetitive tasks, and integrate with CI/CD pipelines.
+
+## Core Concepts
+
+### CLAUDE.md Configuration
+
+CLAUDE.md is the primary configuration file that defines project rules, conventions, and context for Claude Code.
+
+- **Hierarchical placement**: Root, subdirectory, and user-level files
+- **Priority**: More specific paths take precedence over general ones
+- **Content**: Coding conventions, file naming rules, architecture constraints
+
+```markdown
+# Example CLAUDE.md
+- TypeScript strict mode, no `any`
+- File names: kebab-case.ts
+- One component per file
+- Use CSS variables, no hex hardcoding
+```
+
+<Tip title="Exam Point">
+CLAUDE.md priority resolution is a common exam topic. The rule is simple: the most specific path wins. A CLAUDE.md in `src/components/` overrides one in the project root for files in that directory.
+</Tip>
+
+### Slash Commands
+
+Custom commands that trigger predefined workflows:
+
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `/generate` | Create new components | `/generate Button with variants` |
+| `/test` | Generate test files | `/test for utils/format.ts` |
+| `/review` | Run code review | `/review --focus security` |
+| `/commit` | Create structured commits | `/commit` |
+
+### CI/CD Integration
+
+Claude Code runs in CI/CD pipelines using headless (non-interactive) mode:
+
+- **`--print` flag**: Non-interactive execution, outputs results to stdout
+- **JSON output**: Structured output for downstream pipeline parsing
+- **Git integration**: Automated commit messages, PR descriptions, code review
+
+### Verification Loop
+
+The generation-verification cycle ensures code quality:
+
+1. **Generate**: Produce code following CLAUDE.md conventions
+2. **Lint**: Run linters and type checkers
+3. **Test**: Execute relevant test suites
+4. **Fix**: Auto-correct issues found
+5. **Repeat**: Until all checks pass
+
+<Warning title="Watch Out">
+Committing auto-generated code without verification is an anti-pattern. Always include lint and test steps in the generation workflow.
+</Warning>
+
+## Key Exam Topics
+
+1. CLAUDE.md hierarchy and priority rules
+2. Slash command definition and use cases
+3. Headless mode for CI/CD integration
+4. The verification loop pattern
+5. Git workflow integration (Conventional Commits, PR automation)

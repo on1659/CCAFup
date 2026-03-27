@@ -1,0 +1,73 @@
+---
+title: "Code Generation with Claude Code"
+description: "Automated code generation, review, and refactoring workflows using Claude Code"
+order: 2
+---
+
+## Scenario Overview
+
+A development team uses Claude Code to automate code generation, review, and refactoring workflows. CLAUDE.md files provide project context, and slash commands standardize repetitive tasks.
+
+## Related Domains
+
+- **Claude Code Configuration & Workflows** (20%): CLAUDE.md setup, slash commands
+- **Prompt Engineering** (20%): Code generation prompt design
+- **Agentic Architecture** (27%): Agent loop-based code generation
+- **Context Management** (15%): Project context maintenance
+
+## Walkthrough
+
+### Step 1: CLAUDE.md Configuration
+
+Define project conventions in CLAUDE.md so Claude Code generates consistent code.
+
+```markdown
+# Project Rules
+- TypeScript strict mode, no any
+- File names: kebab-case.ts
+- Components: PascalCase exports
+- One component per file
+```
+
+<Tip title="Design Point">
+CLAUDE.md files can be placed at the project root, subdirectories, and user home. The most specific path takes highest priority. Place team-wide rules at root, module-specific rules in their directories.
+</Tip>
+
+### Step 2: Standardize Workflows with Slash Commands
+
+Define repetitive code generation tasks as slash commands:
+
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `/generate` | Create new components | `/generate Button with variants` |
+| `/test` | Generate test files | `/test for utils/format.ts` |
+| `/review` | Run code review | `/review --focus security` |
+| `/refactor` | Suggest refactoring | `/refactor extract-method` |
+
+### Step 3: Code Generation Flow
+
+Claude Code's generation follows an agent loop:
+
+1. **Context gathering**: Read CLAUDE.md + related files
+2. **Planning**: Determine the structure of code to generate
+3. **Writing**: Generate code following conventions
+4. **Verification**: Run linters and type checkers
+5. **Correction**: Auto-fix any errors found
+
+<Warning title="Trap Question">
+Committing Claude Code's generated code without verification is an anti-pattern. Always include linting and testing steps. The exam asks about "how to ensure quality of auto-generated code."
+</Warning>
+
+### Step 4: Git Integration
+
+- **Auto-generated commit messages**: Following Conventional Commits format
+- **Automated PR descriptions**: Change summary + test plan
+- **CI/CD code review**: Claude Code runs as part of the pipeline
+
+## Key Exam Topics
+
+1. CLAUDE.md hierarchy and priority rules
+2. Slash command definition methods and use cases
+3. The necessity of verification loops in code generation
+4. Git hooks and Claude Code integration patterns
+5. Quality assurance strategies for auto-generated code

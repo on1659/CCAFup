@@ -1,0 +1,83 @@
+---
+title: "Tool Design & MCP Integration"
+description: "MCP servers, tool boundaries, error handling, and tool use patterns"
+weight: 18
+order: 4
+---
+
+## Overview
+
+Tool Design & MCP Integration accounts for **18%** of the CCA-F exam. This domain covers how to design tools for AI agents, implement MCP servers, and handle errors in tool interactions.
+
+## Core Concepts
+
+### Model Context Protocol (MCP)
+
+MCP is a standardized protocol for connecting AI models to external tools and data sources:
+
+- **MCP Server**: Exposes tools and resources to AI models
+- **MCP Client**: The model-side component that discovers and invokes tools
+- **Transport**: Communication layer (stdio, HTTP/SSE)
+
+### Tool Design Principles
+
+Well-designed tools follow these principles:
+
+| Principle | Description |
+|-----------|-------------|
+| Single Responsibility | Each tool does one thing well |
+| Clear Naming | Tool name immediately conveys its purpose |
+| Detailed Description | Comprehensive description helps the model choose correctly |
+| Input Validation | Validate all parameters before execution |
+| Predictable Output | Consistent output format across calls |
+
+<Tip title="Exam Point">
+The optimal number of tools is 5-10. Too many tools increase selection errors; too few force tools to be overly complex. The exam tests your ability to find the right granularity.
+</Tip>
+
+### Error Handling
+
+Tools must handle failures gracefully:
+
+- **Input errors**: Return clear validation messages
+- **Execution errors**: Return structured error responses, not stack traces
+- **Timeout handling**: Set reasonable timeouts with fallback behavior
+- **Partial failures**: Return available data with error indicators
+
+```json
+{
+  "status": "partial_success",
+  "data": { "found": 3, "results": [...] },
+  "errors": [
+    { "source": "database_b", "message": "Connection timeout" }
+  ]
+}
+```
+
+### Tool Security
+
+- **Least privilege**: Tools should request minimum necessary permissions
+- **Input sanitization**: Prevent injection attacks through tool parameters
+- **Rate limiting**: Protect external services from excessive calls
+- **Audit logging**: Record all tool invocations for review
+
+<Warning title="Watch Out">
+A tool that accepts arbitrary code execution or unrestricted file system access is a security anti-pattern. Always constrain tool capabilities to the minimum required scope.
+</Warning>
+
+### MCP Server Implementation
+
+Key considerations when building MCP servers:
+
+- **Tool registration**: Define tools with name, description, and input schema
+- **Resource exposure**: Provide read-only access to data sources
+- **Statelessness**: Each tool call should be independent
+- **Versioning**: Support backward compatibility as tools evolve
+
+## Key Exam Topics
+
+1. MCP architecture (server, client, transport)
+2. Tool design principles and granularity decisions
+3. Error handling patterns for tool failures
+4. Security considerations for tool access
+5. When to use tools vs prompt-based approaches

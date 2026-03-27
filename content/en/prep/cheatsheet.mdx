@@ -1,0 +1,95 @@
+---
+title: "Cheatsheet"
+description: "Quick-reference summary for last-minute review — domain summaries, key rules, comparison tables"
+order: 2
+---
+
+## Domain Quick Reference
+
+### 1. Agentic Architecture & Orchestration (27%)
+
+| Concept | Summary |
+|---------|---------|
+| Agent Loop | Observe → Think → Act + termination condition required |
+| Orchestration | Sequential / Parallel / Routing |
+| Multi-Agent | Supervisor (hub-spoke) vs Peer-to-Peer |
+| Guardrails | Input/output validation + action limits + Human-in-the-Loop |
+| Termination | Max iterations, goal achieved, timeout |
+
+**Key Rule**: When the agent is uncertain → escalate to human. Guessing is the worst option.
+
+### 2. Claude Code Configuration & Workflows (20%)
+
+| Concept | Summary |
+|---------|---------|
+| CLAUDE.md | Project rules file, hierarchical placement supported |
+| Slash Commands | Standardize repetitive tasks (/generate, /test, /review) |
+| CI/CD | `--print` non-interactive mode, JSON output |
+| Git Integration | Conventional Commits, automated PR descriptions |
+| Verification | Generate → Lint → Test → Fix → Repeat |
+
+**Key Rule**: CLAUDE.md priority = most specific path wins.
+
+### 3. Prompt Engineering & Structured Output (20%)
+
+| Concept | Summary |
+|---------|---------|
+| JSON Schema | Output format control, enum for value restriction |
+| Few-shot | 2-3 examples for improved accuracy |
+| System Prompt | Role, tone, constraints definition |
+| Chain-of-Thought | Step-by-step reasoning for complex tasks |
+| Validation | Schema (programmatic) + semantic (LLM) dual validation |
+
+**Key Rule**: JSON mode ≠ accuracy guarantee. Schema + semantic validation both required.
+
+### 4. Tool Design & MCP Integration (18%)
+
+| Concept | Summary |
+|---------|---------|
+| MCP | Model Context Protocol — connects models to external tools |
+| Tool Boundary | One tool = one responsibility (SRP) |
+| Error Handling | Graceful fallback on tool failure |
+| Security | Least privilege, input validation |
+| Design | Clear names, detailed descriptions, examples included |
+
+**Key Rule**: Too many tools increase selection errors. 5-10 is optimal.
+
+### 5. Context Management & Reliability (15%)
+
+| Concept | Summary |
+|---------|---------|
+| Context Window | Token limit — efficient usage is essential |
+| Handoff | Structured context transfer between agents |
+| History | Include only relevant history |
+| Reliability | Flag uncertainty, cite sources |
+| Chunking | Split large documents into logical units |
+
+**Key Rule**: Don't stuff everything into context. Select only relevant information.
+
+---
+
+## Programmatic vs Prompt-based Enforcement
+
+| Aspect | Programmatic | Prompt-based |
+|--------|-------------|-------------|
+| Definition | Rules enforced by code | Rules requested via prompt |
+| Reliability | **High** — cannot be violated | Low — can be ignored |
+| Examples | JSON Schema, regex filters | "Always respond in JSON" |
+| Best for | Format, structure, value ranges | Tone, style, reasoning |
+| Cost | Implementation effort | Prompt modification only |
+| Bottom line | **Mandatory for format/security** | Suitable for behavior/style |
+
+---
+
+## 10-Minute Pre-Exam Review — Must-Remember Rules
+
+1. **Agent failure**: Escalate to human (never guess)
+2. **Multi-agent failure**: Graceful degradation (never halt everything)
+3. **Validation**: Programmatic + LLM dual validation
+4. **CLAUDE.md**: Specific path > general path priority
+5. **Tool design**: One tool = one responsibility
+6. **Context**: Include only relevant information
+7. **Security**: Least privilege, always validate input
+8. **Deployment**: Automate checks, but human approves final deploy
+9. **JSON Schema**: Use enum for value restriction, required for mandatory fields
+10. **Scenarios**: Read the question first, then extract key points from the scenario

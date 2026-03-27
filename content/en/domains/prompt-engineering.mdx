@@ -1,0 +1,92 @@
+---
+title: "Prompt Engineering & Structured Output"
+description: "JSON Schema output control, few-shot prompting, validation loops, and system prompts"
+weight: 20
+order: 3
+---
+
+## Overview
+
+Prompt Engineering & Structured Output makes up **20%** of the CCA-F exam. This domain covers techniques for controlling model output format, improving response quality, and ensuring output reliability through validation.
+
+## Core Concepts
+
+### JSON Schema for Output Control
+
+JSON Schema defines the structure, types, and constraints for model output:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": ["billing", "technical", "general"]
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "summary": { "type": "string", "maxLength": 200 }
+  },
+  "required": ["category", "confidence", "summary"]
+}
+```
+
+<Tip title="Exam Point">
+Using `enum` in JSON Schema constrains output to predefined values, which is far more reliable than asking the model to "choose from these options" in the prompt. The exam tests whether you know when to use programmatic vs prompt-based enforcement.
+</Tip>
+
+### Few-shot Prompting
+
+Including input/output examples to guide model behavior:
+
+| Strategy | Examples | Best For |
+|----------|----------|----------|
+| Zero-shot | None — schema only | Simple, well-defined tasks |
+| Few-shot | 2-3 examples | Improved accuracy on complex tasks |
+| Many-shot | 5+ diverse examples | Edge case handling |
+
+### System Prompts
+
+System prompts define the model's role, tone, and constraints:
+
+- **Role definition**: "You are a customer support classifier..."
+- **Behavioral rules**: "Always respond in JSON. Never include PII."
+- **Tone guidelines**: "Be concise and professional."
+- **Constraint specification**: Output format, length limits, forbidden topics
+
+### Chain-of-Thought (CoT)
+
+Encouraging step-by-step reasoning for complex tasks:
+
+- Improves accuracy on multi-step problems
+- Makes reasoning transparent and auditable
+- Can be combined with structured output (think step-by-step, then output JSON)
+
+### Validation Loops
+
+Multi-layer validation ensures output quality:
+
+1. **Schema validation**: Does the output conform to the JSON Schema? (programmatic)
+2. **Format validation**: Are emails, dates, currencies properly formatted? (regex)
+3. **Semantic validation**: Does the output make contextual sense? (LLM re-check)
+4. **Cross-field validation**: Are related fields consistent? (programmatic)
+
+<Warning title="Watch Out">
+JSON mode alone does not guarantee extraction accuracy. Both schema validation (programmatic enforcement) and semantic validation (LLM-based) are necessary. The exam will test this distinction.
+</Warning>
+
+## Programmatic vs Prompt-based Enforcement
+
+| Aspect | Programmatic | Prompt-based |
+|--------|-------------|-------------|
+| Reliability | **High** — rules cannot be violated | Lower — can be ignored |
+| Examples | JSON Schema, regex, type checks | "Please respond in JSON" |
+| Best for | Format, structure, value ranges | Tone, style, reasoning approach |
+| Cost | Implementation effort required | Prompt modification only |
+
+## Key Exam Topics
+
+1. JSON Schema for structured output control
+2. Few-shot example selection and diversity
+3. Programmatic vs prompt-based enforcement trade-offs
+4. Validation loop design and layer ordering
+5. System prompt best practices

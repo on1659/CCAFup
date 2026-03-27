@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Menu, X, Moon, Sun, Search } from "lucide-react";
+import { CommandMenu } from "@/components/search/command-menu";
 
 const navGroups = [
   {
@@ -41,6 +42,7 @@ export function Gnb() {
   const locale = useLocale();
   const { theme, setTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const pathname = usePathname();
   const otherLocale = locale === "ko" ? "en" : "ko";
@@ -89,6 +91,7 @@ export function Gnb() {
         <div className="flex items-center gap-2">
           {/* Search trigger */}
           <button
+            onClick={() => setSearchOpen(true)}
             className="flex h-9 items-center gap-2 rounded-lg border border-border bg-surface px-3 text-small text-hint hover:border-border-hover transition-colors"
             aria-label={t("common.search")}
           >
@@ -150,6 +153,7 @@ export function Gnb() {
           ))}
         </div>
       )}
+      <CommandMenu />
     </header>
   );
 }

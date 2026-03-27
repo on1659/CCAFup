@@ -1,0 +1,63 @@
+---
+title: "Agentic Architecture & Orchestration"
+description: "Agent architecture design, orchestration patterns, and multi-agent system design"
+weight: 27
+order: 1
+---
+
+## Overview
+
+Agentic Architecture is the highest-weighted domain on the CCA-F exam at **27%**. It covers the design, implementation, and operation of AI agents — from single-agent loops to complex multi-agent systems.
+
+## Key Concepts
+
+### Agent Loop Design Patterns
+
+Agents operate on a fundamental **Observe → Think → Act** loop. The design of this loop determines the agent's performance and reliability.
+
+- **ReAct Pattern**: Combines Reasoning + Acting — the most common agent pattern
+- **Plan-and-Execute**: Creates a plan first, then executes step by step
+- **Reflexion**: Iteratively improves through self-evaluation
+
+<Tip title="Exam Point">
+Termination conditions for agent loops are frequently tested. Know the three main types: maximum iteration count, goal achievement condition, and timeout.
+</Tip>
+
+### Orchestration Strategies
+
+Methods for coordinating multiple agents or tasks.
+
+| Strategy | Description | Best For |
+|----------|-------------|----------|
+| Sequential | Execute one task at a time | High dependency between tasks |
+| Parallel | Execute multiple tasks simultaneously | Independent tasks |
+| Routing | Branch to different paths based on conditions | Handling diverse input types |
+
+### Multi-Agent Systems
+
+Architectures where multiple agents collaborate to accomplish complex tasks.
+
+- **Supervisor Pattern**: One supervisor agent coordinates sub-agents
+- **Peer-to-Peer**: Agents interact as equals
+- **Hierarchical**: Role separation through layered structure
+
+<Warning title="Watch Out">
+The most common failure in multi-agent systems is ambiguous inter-agent communication. Clear interface definitions are essential.
+</Warning>
+
+### Agent Supervision & Guardrails
+
+Mechanisms to control agent behavior and ensure safety.
+
+- **Input Guardrails**: Validate inputs before they reach the agent
+- **Output Guardrails**: Verify agent outputs are safe and correct
+- **Action Limits**: Restrict the scope of actions an agent can perform
+- **Human-in-the-Loop**: Require human approval for critical decisions
+
+## Exam Point Summary
+
+1. Termination condition design for agent loops
+2. Criteria for choosing orchestration strategies
+3. Communication patterns in multi-agent systems
+4. Types and timing of guardrails
+5. Trade-offs between Supervisor and Peer-to-Peer patterns

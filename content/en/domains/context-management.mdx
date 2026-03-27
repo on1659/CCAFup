@@ -1,0 +1,92 @@
+---
+title: "Context Management & Reliability"
+description: "Context window management, handoff patterns, reliability, and token optimization"
+weight: 15
+order: 5
+---
+
+## Overview
+
+Context Management & Reliability makes up **15%** of the CCA-F exam. This domain covers techniques for managing the limited context window, transferring context between agents, and ensuring reliable system behavior.
+
+## Core Concepts
+
+### Context Window Management
+
+The context window is the maximum number of tokens a model can process in a single interaction:
+
+- **Input + Output**: Both count toward the token limit
+- **Priority-based inclusion**: Include the most relevant information first
+- **Context pruning**: Remove less relevant information as the window fills
+
+| Strategy | Description | Trade-off |
+|----------|-------------|-----------|
+| Summarization | Compress conversation history | Loses detail |
+| Sliding window | Keep only recent N messages | Loses early context |
+| Selective inclusion | Include only relevant context | Requires relevance judgment |
+| Chunking | Split large documents into pieces | Requires aggregation |
+
+<Tip title="Exam Point">
+"Put everything in the context" is an anti-pattern. The exam tests whether you know how to select and prioritize context. Only include information that directly supports the current task.
+</Tip>
+
+### Handoff Patterns
+
+Structured transfer of context between agents:
+
+- **Full handoff**: Transfer complete conversation state
+- **Summary handoff**: Transfer a summarized version of relevant context
+- **Structured handoff**: Transfer a predefined data structure with key fields
+
+```json
+{
+  "handoff": {
+    "from": "classifier_agent",
+    "to": "resolver_agent",
+    "context": {
+      "ticket_id": "T-1234",
+      "category": "billing",
+      "customer_sentiment": "frustrated",
+      "relevant_history": "..."
+    }
+  }
+}
+```
+
+### Reliability Patterns
+
+Ensuring consistent, trustworthy system behavior:
+
+- **Explicit uncertainty**: When the model isn't sure, it should say so
+- **Source attribution**: Cite sources for factual claims
+- **Confidence scoring**: Attach confidence levels to outputs
+- **Fallback mechanisms**: Define behavior for edge cases
+
+### Conversation Memory
+
+Managing long-running conversations:
+
+- **Short-term memory**: Current conversation context
+- **Long-term memory**: Persistent storage across sessions
+- **Working memory**: Active task-relevant information
+
+<Warning title="Watch Out">
+Hallucination — generating plausible but incorrect information — is a key reliability concern. The exam tests your knowledge of mitigation strategies: grounding in retrieved documents, confidence thresholds, and human review triggers.
+</Warning>
+
+### Large Document Processing
+
+Strategies for documents exceeding the context window:
+
+1. **Chunking**: Split by logical units (sections, pages, paragraphs)
+2. **Map-Reduce**: Extract from each chunk, then merge results
+3. **Priority processing**: Process key sections first, expand as needed
+4. **Iterative refinement**: Multiple passes with increasing detail
+
+## Key Exam Topics
+
+1. Context window optimization strategies
+2. Handoff pattern selection and implementation
+3. Reliability patterns (uncertainty, attribution, confidence)
+4. Hallucination mitigation strategies
+5. Large document processing approaches

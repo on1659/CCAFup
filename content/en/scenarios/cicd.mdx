@@ -1,0 +1,82 @@
+---
+title: "Claude Code for CI/CD"
+description: "Integrating Claude Code into CI/CD pipelines for automated review, testing, and deployment validation"
+order: 5
+---
+
+## Scenario Overview
+
+Integrate Claude Code into CI/CD pipelines to automate code quality checks, test generation, and pre-deployment validation. Claude Code runs in headless mode, performing intelligent verification at each pipeline stage.
+
+## Related Domains
+
+- **Claude Code Configuration & Workflows** (20%): CI/CD integration, headless mode
+- **Agentic Architecture** (27%): Pipeline agent design
+- **Tool Design & MCP** (18%): CI/CD tool integration
+- **Context Management** (15%): Pipeline context maintenance
+
+## Walkthrough
+
+### Step 1: CI Pipeline Integration
+
+Integrate Claude Code into GitHub Actions:
+
+```yaml
+name: Claude Code Review
+on: [pull_request]
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Claude Code Review
+        run: |
+          claude --print "Review this PR for security issues,
+          performance problems, and coding convention violations.
+          Output as structured JSON."
+```
+
+<Tip title="Design Point">
+In CI environments, Claude Code runs in non-interactive mode using the `--print` flag. Structure output as JSON for parsing in downstream pipeline stages.
+</Tip>
+
+### Step 2: Automated Test Generation
+
+Automatically generate tests when new code is added:
+
+| Stage | Action | On Failure |
+|-------|--------|-----------|
+| Coverage analysis | Check test coverage of new code | Trigger test generation |
+| Test generation | Auto-generate unit/integration tests | Comment on PR |
+| Test execution | Run and verify generated tests | Enter fix loop |
+| Reporting | Coverage change report | Block PR |
+
+### Step 3: Pre-deployment Validation
+
+Perform final validation before production deployment:
+
+- **Breaking change detection**: Check API changes for backward compatibility
+- **Environment variable verification**: Ensure all required env vars are set
+- **Migration checks**: Validate DB schema change safety
+- **Security scan**: Check for hardcoded secrets, vulnerable dependencies
+
+### Step 4: Automated Rollback Decisions
+
+Analyze monitoring metrics post-deployment to determine rollback need:
+
+```
+Deploy → Wait 5 min → Check error rate → Normal: Complete
+                                       → Abnormal: Auto-rollback + Alert
+```
+
+<Warning title="Trap Question">
+Auto-approving production deployments based solely on Claude Code's judgment is an anti-pattern. Final deployment approval must include Human-in-the-Loop. The exam distinguishes "stages that can be automated" from "stages requiring human approval."
+</Warning>
+
+## Key Exam Topics
+
+1. Claude Code execution modes in CI environments (non-interactive, `--print`)
+2. Verification loop design for auto-generated tests
+3. Scope of automation in pre-deployment validation
+4. Pipeline stages where Human-in-the-Loop is mandatory
+5. Automated rollback criteria and limitations

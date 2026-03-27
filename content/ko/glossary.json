@@ -1,0 +1,242 @@
+[
+  {
+    "term": "MCP (Model Context Protocol)",
+    "termKo": "모델 컨텍스트 프로토콜",
+    "definition": "A protocol that enables AI models to interact with external tools and data sources through a standardized interface.",
+    "definitionKo": "AI 모델이 표준화된 인터페이스를 통해 외부 도구 및 데이터 소스와 상호작용할 수 있게 하는 프로토콜이다.",
+    "domain": "tool-design-mcp",
+    "related": ["Tool Use", "Function Calling", "MCP Server"]
+  },
+  {
+    "term": "Agent Loop",
+    "termKo": "에이전트 루프",
+    "definition": "The core execution cycle of an AI agent: Observe → Think → Act, repeated until a termination condition is met.",
+    "definitionKo": "AI 에이전트의 핵심 실행 사이클로, 관찰 → 판단 → 행동을 종료 조건이 충족될 때까지 반복한다.",
+    "domain": "agentic-architecture",
+    "related": ["ReAct", "Plan-and-Execute", "Termination Condition"]
+  },
+  {
+    "term": "Orchestration",
+    "termKo": "오케스트레이션",
+    "definition": "The coordination and management of multiple agents or tasks to achieve a complex goal.",
+    "definitionKo": "복잡한 목표 달성을 위해 여러 에이전트 또는 작업을 조율하고 관리하는 것이다.",
+    "domain": "agentic-architecture",
+    "related": ["Sequential", "Parallel", "Routing"]
+  },
+  {
+    "term": "Hub-and-Spoke",
+    "termKo": "허브 앤 스포크",
+    "definition": "A multi-agent pattern where a central orchestrator (hub) delegates tasks to specialized agents (spokes).",
+    "definitionKo": "중앙 오케스트레이터(허브)가 전문 에이전트(스포크)에게 작업을 위임하는 멀티에이전트 패턴이다.",
+    "domain": "agentic-architecture",
+    "related": ["Supervisor Pattern", "Multi-Agent", "Task Decomposition"]
+  },
+  {
+    "term": "Guardrails",
+    "termKo": "가드레일",
+    "definition": "Safety mechanisms that constrain agent behavior through input validation, output filtering, and action limitations.",
+    "definitionKo": "입력 검증, 출력 필터링, 행동 제한을 통해 에이전트 동작을 제어하는 안전 메커니즘이다.",
+    "domain": "agentic-architecture",
+    "related": ["Input Validation", "Output Filtering", "Human-in-the-Loop"]
+  },
+  {
+    "term": "Human-in-the-Loop (HITL)",
+    "termKo": "사람 개입 루프",
+    "definition": "A pattern where critical decisions require human approval before the agent proceeds.",
+    "definitionKo": "에이전트가 중요한 결정을 진행하기 전에 사람의 승인을 요구하는 패턴이다.",
+    "domain": "agentic-architecture",
+    "related": ["Guardrails", "Escalation", "Approval Workflow"]
+  },
+  {
+    "term": "CLAUDE.md",
+    "termKo": "CLAUDE.md",
+    "definition": "A configuration file that defines project rules, conventions, and context for Claude Code to follow.",
+    "definitionKo": "Claude Code가 따라야 할 프로젝트 규칙, 컨벤션, 컨텍스트를 정의하는 설정 파일이다.",
+    "domain": "claude-code",
+    "related": ["Claude Code", "Project Rules", "Slash Commands"]
+  },
+  {
+    "term": "Slash Commands",
+    "termKo": "슬래시 커맨드",
+    "definition": "Custom commands prefixed with / that trigger predefined workflows in Claude Code.",
+    "definitionKo": "Claude Code에서 미리 정의된 워크플로우를 실행하는 / 접두사 커스텀 명령이다.",
+    "domain": "claude-code",
+    "related": ["CLAUDE.md", "Workflow Automation", "Claude Code"]
+  },
+  {
+    "term": "Headless Mode",
+    "termKo": "헤드리스 모드",
+    "definition": "Running Claude Code in non-interactive mode, typically in CI/CD pipelines, using the --print flag.",
+    "definitionKo": "CI/CD 파이프라인 등에서 --print 플래그를 사용해 비대화형으로 Claude Code를 실행하는 모드이다.",
+    "domain": "claude-code",
+    "related": ["CI/CD", "--print Flag", "Automation"]
+  },
+  {
+    "term": "JSON Schema",
+    "termKo": "JSON 스키마",
+    "definition": "A vocabulary for annotating and validating JSON documents, used to define structured output formats.",
+    "definitionKo": "JSON 문서의 구조와 검증 규칙을 정의하는 표준 어휘이다. 구조화된 출력 형식 정의에 사용된다.",
+    "domain": "prompt-engineering",
+    "related": ["Structured Output", "Validation", "Schema Validation"]
+  },
+  {
+    "term": "Few-shot Prompting",
+    "termKo": "퓨샷 프롬프팅",
+    "definition": "A prompting technique that includes 2-3 input/output examples to guide the model's behavior.",
+    "definitionKo": "모델의 동작을 안내하기 위해 2-3개의 입출력 예시를 포함하는 프롬프트 기법이다.",
+    "domain": "prompt-engineering",
+    "related": ["Zero-shot", "Many-shot", "In-context Learning"]
+  },
+  {
+    "term": "Chain-of-Thought (CoT)",
+    "termKo": "사고 연쇄",
+    "definition": "A prompting technique that encourages the model to reason step-by-step before providing a final answer.",
+    "definitionKo": "모델이 최종 답변 전에 단계적으로 추론하도록 유도하는 프롬프팅 기법이다.",
+    "domain": "prompt-engineering",
+    "related": ["Reasoning", "Step-by-step", "Problem Decomposition"]
+  },
+  {
+    "term": "System Prompt",
+    "termKo": "시스템 프롬프트",
+    "definition": "Instructions given to the model that define its role, behavior, tone, and constraints.",
+    "definitionKo": "모델의 역할, 행동, 톤, 제약 조건을 정의하는 지시문이다.",
+    "domain": "prompt-engineering",
+    "related": ["Role Definition", "Constraints", "Behavioral Rules"]
+  },
+  {
+    "term": "Programmatic Enforcement",
+    "termKo": "프로그래매틱 강제",
+    "definition": "Enforcing rules through code (schema validation, regex, type checking) rather than prompt instructions.",
+    "definitionKo": "프롬프트 지시가 아닌 코드(스키마 검증, 정규식, 타입 체크)를 통해 규칙을 강제하는 방식이다.",
+    "domain": "prompt-engineering",
+    "related": ["JSON Schema", "Validation", "Prompt-based Enforcement"]
+  },
+  {
+    "term": "Tool Use",
+    "termKo": "도구 사용",
+    "definition": "The ability of an AI model to invoke external tools/functions to perform actions beyond text generation.",
+    "definitionKo": "AI 모델이 텍스트 생성 외에 외부 도구/함수를 호출하여 작업을 수행하는 능력이다.",
+    "domain": "tool-design-mcp",
+    "related": ["Function Calling", "MCP", "Tool Definition"]
+  },
+  {
+    "term": "MCP Server",
+    "termKo": "MCP 서버",
+    "definition": "A server that implements the Model Context Protocol to expose tools and resources to AI models.",
+    "definitionKo": "AI 모델에 도구와 리소스를 노출하기 위해 Model Context Protocol을 구현하는 서버이다.",
+    "domain": "tool-design-mcp",
+    "related": ["MCP", "Tool Exposure", "Resource Provider"]
+  },
+  {
+    "term": "Tool Boundary",
+    "termKo": "도구 경계",
+    "definition": "The principle that each tool should have a single, clear responsibility (Single Responsibility Principle for tools).",
+    "definitionKo": "각 도구가 하나의 명확한 책임만을 가져야 한다는 원칙이다 (도구의 단일 책임 원칙).",
+    "domain": "tool-design-mcp",
+    "related": ["SRP", "Tool Design", "Separation of Concerns"]
+  },
+  {
+    "term": "Context Window",
+    "termKo": "컨텍스트 윈도우",
+    "definition": "The maximum number of tokens a model can process in a single interaction, including input and output.",
+    "definitionKo": "모델이 한 번의 상호작용에서 처리할 수 있는 최대 토큰 수로, 입력과 출력을 모두 포함한다.",
+    "domain": "context-management",
+    "related": ["Token Limit", "Truncation", "Context Pruning"]
+  },
+  {
+    "term": "Handoff",
+    "termKo": "핸드오프",
+    "definition": "The structured transfer of context and control from one agent to another.",
+    "definitionKo": "한 에이전트에서 다른 에이전트로 컨텍스트와 제어를 구조적으로 전달하는 것이다.",
+    "domain": "context-management",
+    "related": ["Agent Communication", "Context Transfer", "State Management"]
+  },
+  {
+    "term": "Chunking",
+    "termKo": "청킹",
+    "definition": "Dividing large documents into smaller logical units to fit within context window limits.",
+    "definitionKo": "컨텍스트 윈도우 한계에 맞추기 위해 대용량 문서를 작은 논리적 단위로 분할하는 것이다.",
+    "domain": "context-management",
+    "related": ["Context Window", "Map-Reduce", "Document Processing"]
+  },
+  {
+    "term": "RAG (Retrieval-Augmented Generation)",
+    "termKo": "검색 증강 생성",
+    "definition": "A technique that enhances model responses by first retrieving relevant documents from a knowledge base.",
+    "definitionKo": "지식 베이스에서 관련 문서를 먼저 검색하여 모델의 응답을 향상시키는 기법이다.",
+    "domain": "context-management",
+    "related": ["Knowledge Base", "Embedding", "Semantic Search"]
+  },
+  {
+    "term": "Graceful Degradation",
+    "termKo": "우아한 퇴화",
+    "definition": "The ability of a system to continue operating with reduced functionality when a component fails.",
+    "definitionKo": "시스템의 구성 요소가 실패했을 때 기능을 축소하면서도 계속 동작하는 능력이다.",
+    "domain": "agentic-architecture",
+    "related": ["Fault Tolerance", "Partial Failure", "Fallback"]
+  },
+  {
+    "term": "ReAct Pattern",
+    "termKo": "ReAct 패턴",
+    "definition": "An agent pattern combining Reasoning and Acting, where the agent thinks before each action step.",
+    "definitionKo": "추론(Reasoning)과 행동(Acting)을 결합한 에이전트 패턴으로, 각 행동 단계 전에 사고한다.",
+    "domain": "agentic-architecture",
+    "related": ["Agent Loop", "Reasoning", "Action Planning"]
+  },
+  {
+    "term": "Escalation",
+    "termKo": "에스컬레이션",
+    "definition": "Transferring a task or decision to a human or higher-authority system when the agent cannot handle it.",
+    "definitionKo": "에이전트가 처리할 수 없는 작업이나 결정을 사람 또는 상위 시스템으로 이관하는 것이다.",
+    "domain": "agentic-architecture",
+    "related": ["Human-in-the-Loop", "Fallback", "Error Handling"]
+  },
+  {
+    "term": "Task Decomposition",
+    "termKo": "태스크 분해",
+    "definition": "Breaking down a complex task into smaller, manageable sub-tasks that can be executed independently.",
+    "definitionKo": "복잡한 작업을 독립적으로 실행 가능한 작은 하위 작업으로 분해하는 것이다.",
+    "domain": "agentic-architecture",
+    "related": ["Orchestration", "Parallel Execution", "Dependencies"]
+  },
+  {
+    "term": "Structured Output",
+    "termKo": "구조화된 출력",
+    "definition": "Model output that follows a predefined format (JSON, XML, etc.) enforced by schema validation.",
+    "definitionKo": "스키마 검증을 통해 사전 정의된 형식(JSON, XML 등)을 따르는 모델의 출력이다.",
+    "domain": "prompt-engineering",
+    "related": ["JSON Schema", "Validation", "Output Parsing"]
+  },
+  {
+    "term": "Conventional Commits",
+    "termKo": "컨벤셔널 커밋",
+    "definition": "A specification for commit messages that follows a structured format: type(scope): description.",
+    "definitionKo": "type(scope): description 형식의 구조화된 커밋 메시지 작성 규약이다.",
+    "domain": "claude-code",
+    "related": ["Git", "Commit Message", "CI/CD"]
+  },
+  {
+    "term": "Validation Loop",
+    "termKo": "검증 루프",
+    "definition": "An iterative process of generating output, validating it, and regenerating if validation fails.",
+    "definitionKo": "출력을 생성하고, 검증하고, 검증 실패 시 재생성하는 반복 프로세스이다.",
+    "domain": "prompt-engineering",
+    "related": ["Schema Validation", "Retry", "Quality Assurance"]
+  },
+  {
+    "term": "Supervisor Pattern",
+    "termKo": "감독자 패턴",
+    "definition": "A multi-agent pattern where one supervisor agent coordinates and delegates to worker agents.",
+    "definitionKo": "하나의 감독 에이전트가 작업자 에이전트들을 조율하고 작업을 위임하는 멀티에이전트 패턴이다.",
+    "domain": "agentic-architecture",
+    "related": ["Hub-and-Spoke", "Multi-Agent", "Delegation"]
+  },
+  {
+    "term": "Hallucination",
+    "termKo": "환각",
+    "definition": "When a model generates plausible-sounding but factually incorrect information.",
+    "definitionKo": "모델이 그럴듯하게 들리지만 사실과 다른 정보를 생성하는 현상이다.",
+    "domain": "context-management",
+    "related": ["Reliability", "Fact Checking", "Grounding"]
+  }
+]

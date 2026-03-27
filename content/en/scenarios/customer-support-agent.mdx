@@ -1,0 +1,55 @@
+---
+title: "Customer Support Resolution Agent"
+description: "Building an automated customer inquiry classification and resolution agent system"
+order: 1
+---
+
+## Scenario Overview
+
+A customer support team handles hundreds of daily inquiries. The goal is to design an AI agent that automatically classifies inquiries and performs first-level resolution, escalating to humans when necessary.
+
+## Related Domains
+
+- **Agentic Architecture** (27%): Agent loop design, routing patterns
+- **Tool Design & MCP** (18%): CRM and knowledge base integration
+- **Prompt Engineering** (20%): Classification prompts, response generation
+- **Context Management** (15%): Conversation history management
+
+## Walkthrough
+
+### Step 1: Inquiry Classification Agent
+
+Design an agent that classifies customer inquiries into categories (billing, technical, general).
+
+<Tip title="Design Point">
+Include 2-3 few-shot examples per category to improve classification accuracy. Route ambiguous inquiries to an "other" category for human escalation.
+</Tip>
+
+### Step 2: Knowledge Base Search
+
+Based on the classified category, search relevant FAQs and manuals to generate draft responses.
+
+- Use RAG (Retrieval-Augmented Generation) to find relevant documents
+- Include search results as context for response generation
+- Return a general guidance message when no relevant results are found
+
+### Step 3: Response Generation & Validation
+
+Apply guardrails to verify the generated response:
+
+| Validation | Method | On Failure |
+|-----------|--------|-----------|
+| Factual accuracy | Cross-reference with KB docs | Escalate to human |
+| Tone/manner | System prompt rules | Auto-correct |
+| Sensitive information | Regex filters | Mask data |
+
+<Warning title="Trap Question">
+A common exam question: "What should the agent do when it's uncertain?" The answer is always "escalate to a human." Having the agent guess is the worst choice.
+</Warning>
+
+## Key Exam Topics
+
+1. Fallback handling in agent routing strategies
+2. Response strategy when RAG search returns no results
+3. Human-in-the-Loop escalation criteria
+4. Types and ordering of response quality guardrails
