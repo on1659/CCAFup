@@ -32,7 +32,9 @@ const searchData: SearchItem[] = [
 
   // Prep
   { title: "준비 가이드", description: "12주 로드맵, 코스 목록, 학습 전략", category: "prep", href: "/prep/roadmap" },
+  { title: "출제 패턴 분석", description: "출제 구조, 안티패턴 함정, 5대 출제 공식", category: "prep", href: "/prep/exam-patterns" },
   { title: "치트시트", description: "도메인별 요약, 시험 직전 복습", category: "prep", href: "/prep/cheatsheet" },
+  { title: "모의시험", description: "80문항 연습 문제, 모의시험 모드", category: "prep", href: "/quiz" },
   { title: "용어 사전", description: "시험 핵심 용어 한영 대조", category: "prep", href: "/glossary" },
   { title: "리소스 & 링크", description: "공식 문서, 추천 강의, 커뮤니티 자료", category: "prep", href: "/resources" },
 ];

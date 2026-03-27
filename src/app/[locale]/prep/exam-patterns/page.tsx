@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, Map } from "lucide-react";
+import { ArrowLeft, Target } from "lucide-react";
 import Link from "next/link";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -16,18 +16,18 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "roadmap" });
+  const t = await getTranslations({ locale, namespace: "examPatterns" });
   return { title: t("title"), description: t("description") };
 }
 
-export default async function RoadmapPage({
+export default async function ExamPatternsPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "roadmap" });
-  const mdx = await getMdxSource(locale, "prep", "roadmap");
+  const t = await getTranslations({ locale, namespace: "examPatterns" });
+  const mdx = await getMdxSource(locale, "prep", "exam-patterns");
 
   if (!mdx) notFound();
 
@@ -48,33 +48,26 @@ export default async function RoadmapPage({
     <main className="flex-1 px-4 py-12">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-[1fr_200px] lg:gap-8">
         <div className="mx-auto max-w-3xl">
+          <Link
+            href={`/${locale}/prep/roadmap`}
+            className="mb-6 inline-flex items-center gap-1.5 text-small text-sub hover:text-heading transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            {t("backToPrep")}
+          </Link>
+
           <div className="mb-8 flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-soft">
-              <Map className="h-5 w-5 text-accent" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-danger-soft">
+              <Target className="h-5 w-5 text-danger" />
             </div>
-            <h1 className="text-[24px] font-bold leading-tight text-heading">
-              {t("title")}
-            </h1>
+            <div>
+              <h1 className="text-[24px] font-bold leading-tight text-heading">
+                {t("title")}
+              </h1>
+            </div>
           </div>
 
           <article className="mdx-content">{content}</article>
-
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={`/${locale}/prep/exam-patterns`}
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-small font-medium text-white hover:bg-primary-hover transition-colors"
-            >
-              {locale === "ko" ? "출제 패턴 분석" : "Exam Pattern Analysis"}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href={`/${locale}/prep/cheatsheet`}
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-small font-medium text-heading hover:bg-raised transition-colors"
-            >
-              {locale === "ko" ? "치트시트" : "Cheatsheet"}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
         </div>
 
         {headings.length > 0 && (

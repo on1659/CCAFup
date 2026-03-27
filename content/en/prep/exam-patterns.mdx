@@ -1,0 +1,134 @@
+---
+title: "Exam Pattern Analysis"
+description: "How CCA-F questions are structured, answer choice patterns, anti-pattern traps, and the 5 key exam formulas"
+order: 3
+---
+
+## Question Structure — Consistent 3-Step Format
+
+Every CCA-F question follows the same structure:
+
+```
+[Scenario Anchor] → [Specific Evidence/Data] → [Most effective solution?]
+```
+
+### Step 1: Scenario Anchoring
+
+4 of 6 scenarios are randomly selected for each exam. Every question is anchored to one scenario.
+
+> "You are building a customer support resolution agent using the Claude Agent SDK. The agent handles high-ambiguity requests like returns, billing disputes..."
+
+### Step 2: Concrete Evidence
+
+Questions always include **specific numbers, logs, or observations**. No abstract theory.
+
+| Evidence Type | Example |
+|--------------|---------|
+| Production data | "In 12% of cases, the agent skips get_customer" |
+| Performance metrics | "55% first-contact resolution, below the 80% target" |
+| System logs | "The coordinator decomposed the topic into only 3 visual arts subtasks" |
+| Observations | "14-file review produces inconsistent feedback" |
+
+### Step 3: "Most Effective" Solution
+
+Questions always ask for **"most effectively"**, **"most effective first step"**, **"best enables"** — not just correct, but most appropriate.
+
+---
+
+## Answer Choice Patterns — 3 of 4 Are Anti-Patterns
+
+| Wrong Answer Type | Description | Frequency |
+|------------------|-------------|-----------|
+| **Prompt trap** | "Add to the system prompt", "Add few-shot examples" | Almost every question |
+| **Over-engineering** | Separate classifier model, ML infrastructure, routing layer | Frequent |
+| **Wrong problem** | Sentiment analysis, speculative caching — unrelated to root cause | Frequent |
+| **Extreme response** | Halt entire system, infinite retry, suppress errors | Occasional |
+
+<Tip title="Key Strategy">
+Ask yourself: "Does this directly address the root cause?" The answer that proportionally addresses the root cause is correct. Over- or under-responses are wrong.
+</Tip>
+
+---
+
+## 5 Key Exam Formulas
+
+### Formula 1: Guaranteed Behavior → Programmatic Enforcement
+
+**Pattern**: "The agent skips a required step X% of the time"
+
+| Trap | Correct |
+|------|---------|
+| Enhance system prompt | **Hooks or programmatic prerequisites** |
+| Add few-shot examples | **Code-level blocking gates** |
+
+### Formula 2: Tool Selection Errors → Improve Tool Descriptions
+
+**Pattern**: "The agent calls the wrong tool. Both tools have minimal descriptions"
+
+| Trap | Correct |
+|------|---------|
+| Few-shot examples for tool selection | **Expand tool descriptions** (inputs, examples, boundaries) |
+| Add routing classifier | **Rename + differentiate descriptions** |
+
+### Formula 3: Large Review Quality → Multi-Pass Split
+
+**Pattern**: "Reviewing N files together produces inconsistent results"
+
+| Trap | Correct |
+|------|---------|
+| Larger context window model | **Per-file local analysis + cross-file integration pass** |
+| 3x independent review voting | **Split into focused passes** |
+
+### Formula 4: CI/CD Hang → -p Flag
+
+**Pattern**: "Pipeline hangs indefinitely waiting for input"
+
+| Trap | Correct |
+|------|---------|
+| CLAUDE_HEADLESS=true env var | **`-p` (--print) flag** |
+| --batch flag | **Non-interactive mode** |
+
+### Formula 5: Cost Reduction → Real-time for Blocking, Batch for Non-blocking
+
+**Pattern**: "Proposal to switch both workflows to Batches API"
+
+| Trap | Correct |
+|------|---------|
+| Switch both to batch | **Only overnight reports to batch, keep pre-merge real-time** |
+| Keep both real-time | Batches API has 24h SLA, unsuitable for blocking |
+
+---
+
+## Scenario Focus Areas
+
+| Scenario | Primary Tests | Key Domains |
+|---------|--------------|-------------|
+| Customer Support | Programmatic enforcement, escalation criteria, tool descriptions | D1, D2, D5 |
+| Code Generation | CLAUDE.md hierarchy, .claude/rules/, plan mode, Skills | D3, D5 |
+| Multi-Agent Research | Task decomposition breadth, error propagation, scoped tools | D1, D2, D5 |
+| Developer Productivity | Built-in tool selection (Grep/Glob), MCP servers | D2, D3, D1 |
+| CI/CD | `-p` flag, Batches API, multi-pass review | D3, D4 |
+| Data Extraction | tool_use + JSON Schema, nullable fields, validation-retry | D4, D5 |
+
+---
+
+## Official Explanation Patterns
+
+Key phrases from official wrong-answer explanations:
+
+| Official Phrase | Meaning |
+|----------------|---------|
+| "relies on **probabilistic LLM compliance**" | Prompt-based approaches can't guarantee behavior |
+| "**over-engineered**, requiring labeled data and ML infrastructure" | Prompt optimization not tried first |
+| "solves **a different problem entirely**" | Not addressing root cause |
+| "**larger context windows don't solve attention quality** issues" | Quality problem, not quantity |
+| "**generic status hides valuable context**" | Importance of structured errors |
+
+---
+
+## Official Resources (Must Use)
+
+1. **Exam Guide PDF** — Domain Task Statements + 12 sample questions
+2. **Anthropic Academy 13 free courses** — Available on Skilljar (no partner access needed)
+3. **Official 60-question Practice Exam** — Same format as real exam, on Skilljar
+4. **Target Practice Exam score: 900/1000+** before attempting the real exam

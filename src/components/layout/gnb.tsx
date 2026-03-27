@@ -31,7 +31,9 @@ const navGroups = [
     label: "nav.roadmap",
     items: [
       { label: "nav.roadmap", href: "/prep/roadmap" },
+      { label: "nav.examPatterns", href: "/prep/exam-patterns" },
       { label: "nav.cheatsheet", href: "/prep/cheatsheet" },
+      { label: "nav.quiz", href: "/quiz" },
       { label: "nav.resources", href: "/resources" },
     ],
   },

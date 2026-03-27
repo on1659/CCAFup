@@ -17,6 +17,7 @@
     "cheatsheet": "치트시트",
     "resources": "리소스",
     "quiz": "모의시험",
+    "examPatterns": "출제 패턴",
     "dashboard": "대시보드",
     "community": "커뮤니티"
   },
@@ -117,6 +118,11 @@
   "quiz": {
     "title": "모의시험",
     "description": "CCA-F 시험 대비 연습 문제를 풀어보세요. 도메인별, 난이도별 필터를 활용하세요."
+  },
+  "examPatterns": {
+    "title": "출제 패턴 분석",
+    "description": "CCA-F 시험의 출제 구조, 선택지 패턴, 안티패턴 함정, 핵심 출제 공식을 분석합니다.",
+    "backToPrep": "준비 가이드로 돌아가기"
   },
   "sidebar": {
     "exam": "시험",

@@ -28,7 +28,9 @@ const sidebarGroups = [
     labelKey: "sidebar.prep",
     items: [
       { labelKey: "nav.roadmap", href: "/prep/roadmap" },
+      { labelKey: "nav.examPatterns", href: "/prep/exam-patterns" },
       { labelKey: "nav.cheatsheet", href: "/prep/cheatsheet" },
+      { labelKey: "nav.quiz", href: "/quiz" },
       { labelKey: "nav.glossary", href: "/glossary" },
       { labelKey: "nav.resources", href: "/resources" },
     ],

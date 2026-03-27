@@ -17,6 +17,7 @@
     "cheatsheet": "Cheatsheet",
     "resources": "Resources",
     "quiz": "Practice Quiz",
+    "examPatterns": "Exam Patterns",
     "dashboard": "Dashboard",
     "community": "Community"
   },
@@ -116,6 +117,11 @@
   "quiz": {
     "title": "Practice Quiz",
     "description": "Test your CCA-F exam readiness with practice questions. Filter by domain and difficulty."
+  },
+  "examPatterns": {
+    "title": "Exam Pattern Analysis",
+    "description": "How CCA-F questions are structured — answer choice patterns, anti-pattern traps, and 5 key exam formulas.",
+    "backToPrep": "Back to Prep Guide"
   },
   "sidebar": {
     "exam": "Exam",
