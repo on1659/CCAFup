@@ -278,5 +278,565 @@
     ],
     "answer": 1,
     "explanation": "구조화된 에러 응답(status, error message)을 반환하고, 부분적으로 성공한 데이터가 있다면 함께 포함하는 것이 올바른 접근입니다. 스택 트레이스는 보안 리스크가 있고, 무한 재시도는 위험합니다."
+  },
+  {
+    "id": 21,
+    "domain": "agentic-architecture",
+    "difficulty": "basic",
+    "question": "ReAct 패턴에서 'Re'와 'Act'가 의미하는 것은?",
+    "choices": [
+      "A. Reaction과 Action",
+      "B. Reasoning과 Acting",
+      "C. Reading과 Activating",
+      "D. Recall과 Act"
+    ],
+    "answer": 1,
+    "explanation": "ReAct는 Reasoning(추론)과 Acting(행동)을 결합한 에이전트 패턴입니다. 에이전트가 각 행동 전에 사고 과정을 거쳐 더 정확한 결정을 내립니다."
+  },
+  {
+    "id": 22,
+    "domain": "agentic-architecture",
+    "difficulty": "intermediate",
+    "question": "Routing 오케스트레이션 전략이 가장 적합한 상황은?",
+    "choices": [
+      "A. 모든 작업이 동일한 처리 로직을 사용할 때",
+      "B. 입력 유형에 따라 다른 처리 경로가 필요할 때",
+      "C. 작업 간 강한 의존성이 있을 때",
+      "D. 단일 에이전트로 충분할 때"
+    ],
+    "answer": 1,
+    "explanation": "Routing은 입력을 분석하여 적절한 처리 경로로 분기하는 전략입니다. 고객 문의를 카테고리별로 다른 전문 에이전트에 전달하는 것이 대표적인 예입니다."
+  },
+  {
+    "id": 23,
+    "domain": "agentic-architecture",
+    "difficulty": "advanced",
+    "question": "Hierarchical 멀티에이전트 시스템에서 중간 레벨 에이전트의 역할은?",
+    "choices": [
+      "A. 최상위 에이전트와 동일한 작업을 수행한다",
+      "B. 자신의 하위 에이전트를 조율하면서 상위에 결과를 보고한다",
+      "C. 오직 로깅만 수행한다",
+      "D. 하위 에이전트의 결과를 필터링 없이 그대로 전달한다"
+    ],
+    "answer": 1,
+    "explanation": "Hierarchical 구조에서 중간 레벨은 자신의 하위 에이전트 그룹을 관리하며, 결과를 종합하여 상위에 보고합니다. 각 레벨이 적절한 추상화를 담당합니다."
+  },
+  {
+    "id": 24,
+    "domain": "agentic-architecture",
+    "difficulty": "intermediate",
+    "question": "입력 Guardrails의 주요 목적은?",
+    "choices": [
+      "A. 에이전트의 출력 형식을 검증하는 것",
+      "B. 에이전트에 전달되는 입력이 안전하고 유효한지 검증하는 것",
+      "C. 에이전트의 실행 속도를 제한하는 것",
+      "D. 에이전트의 메모리 사용량을 모니터링하는 것"
+    ],
+    "answer": 1,
+    "explanation": "입력 Guardrails는 에이전트에 전달되기 전에 입력을 검증합니다. 악의적 입력, 프롬프트 인젝션, 범위 외 요청을 사전에 차단합니다."
+  },
+  {
+    "id": 25,
+    "domain": "agentic-architecture",
+    "difficulty": "advanced",
+    "question": "Plan-and-Execute 패턴과 ReAct 패턴의 핵심 차이는?",
+    "choices": [
+      "A. Plan-and-Execute는 도구를 사용하지 않는다",
+      "B. Plan-and-Execute는 먼저 전체 계획을 수립한 후 실행하고, ReAct는 매 단계마다 추론한다",
+      "C. ReAct는 계획 없이 랜덤하게 행동한다",
+      "D. 두 패턴은 동일하며 이름만 다르다"
+    ],
+    "answer": 1,
+    "explanation": "Plan-and-Execute는 사전에 전체 실행 계획을 수립한 후 순서대로 실행합니다. ReAct는 각 단계에서 현재 상황을 추론하고 다음 행동을 결정합니다."
+  },
+  {
+    "id": 26,
+    "domain": "claude-code",
+    "difficulty": "basic",
+    "question": "Claude Code에서 슬래시 커맨드의 주요 목적은?",
+    "choices": [
+      "A. Claude Code를 종료하는 것",
+      "B. 반복적인 작업을 미리 정의된 워크플로우로 표준화하는 것",
+      "C. 코드의 실행 속도를 높이는 것",
+      "D. Git 커밋을 자동으로 생성하는 것"
+    ],
+    "answer": 1,
+    "explanation": "슬래시 커맨드는 반복 작업(코드 생성, 테스트, 리뷰 등)을 사전에 정의하여 일관된 결과를 얻을 수 있게 하는 워크플로우 자동화 기능입니다."
+  },
+  {
+    "id": 27,
+    "domain": "claude-code",
+    "difficulty": "intermediate",
+    "question": "CLAUDE.md에 포함해야 할 가장 중요한 내용은?",
+    "choices": [
+      "A. 프로젝트의 전체 소스 코드",
+      "B. 프로젝트의 코딩 컨벤션, 아키텍처 규칙, 파일 구조 규칙",
+      "C. 팀원들의 연락처 정보",
+      "D. 프로젝트의 재무 정보"
+    ],
+    "answer": 1,
+    "explanation": "CLAUDE.md는 코딩 컨벤션(TypeScript strict, 네이밍 규칙), 아키텍처 제약(파일 구조, 컴포넌트 패턴), 프로젝트별 규칙을 정의하여 Claude Code의 일관된 출력을 보장합니다."
+  },
+  {
+    "id": 28,
+    "domain": "claude-code",
+    "difficulty": "advanced",
+    "question": "Claude Code의 Hooks 기능이 주로 사용되는 용도는?",
+    "choices": [
+      "A. 모델의 학습 데이터를 수정하는 것",
+      "B. 특정 이벤트(도구 호출, 파일 수정 등)에 자동으로 셸 명령을 실행하는 것",
+      "C. 인터넷 연결을 관리하는 것",
+      "D. 다른 AI 모델로 전환하는 것"
+    ],
+    "answer": 1,
+    "explanation": "Hooks는 Claude Code의 이벤트(도구 호출 전후, 프롬프트 제출 시 등)에 셸 명령을 자동 실행하는 기능입니다. 린터 실행, 포매터 적용 등에 활용됩니다."
+  },
+  {
+    "id": 29,
+    "domain": "claude-code",
+    "difficulty": "intermediate",
+    "question": "Conventional Commits에서 'feat:', 'fix:', 'chore:'의 역할은?",
+    "choices": [
+      "A. 코드의 실행 속도를 표시한다",
+      "B. 커밋의 유형을 구조화하여 변경 목적을 명확히 한다",
+      "C. 파일의 중요도를 표시한다",
+      "D. 브랜치 전략을 정의한다"
+    ],
+    "answer": 1,
+    "explanation": "Conventional Commits는 feat(신기능), fix(버그 수정), chore(관리 작업) 등의 접두사로 커밋 유형을 구조화합니다. 자동 변경 로그 생성과 시맨틱 버저닝에 활용됩니다."
+  },
+  {
+    "id": 30,
+    "domain": "prompt-engineering",
+    "difficulty": "basic",
+    "question": "시스템 프롬프트에 포함해야 할 핵심 요소가 아닌 것은?",
+    "choices": [
+      "A. 모델의 역할 정의",
+      "B. 응답 톤과 스타일 지침",
+      "C. 모델의 학습 데이터 목록",
+      "D. 출력 형식과 제약 조건"
+    ],
+    "answer": 2,
+    "explanation": "시스템 프롬프트에는 역할 정의, 톤/스타일, 출력 형식, 제약 조건을 포함합니다. 모델의 학습 데이터는 사용자가 제어할 수 없는 영역이므로 시스템 프롬프트와 무관합니다."
+  },
+  {
+    "id": 31,
+    "domain": "prompt-engineering",
+    "difficulty": "intermediate",
+    "question": "Chain-of-Thought (CoT) 프롬프팅이 가장 효과적인 상황은?",
+    "choices": [
+      "A. 단순한 분류 작업",
+      "B. 여러 단계의 논리적 추론이 필요한 복잡한 문제",
+      "C. 이미지 생성",
+      "D. 단순 텍스트 번역"
+    ],
+    "answer": 1,
+    "explanation": "CoT는 복잡한 추론 문제에서 모델이 단계적으로 사고하도록 유도하여 정확도를 향상시킵니다. 단순 작업에는 오히려 불필요한 지연을 초래합니다."
+  },
+  {
+    "id": 32,
+    "domain": "prompt-engineering",
+    "difficulty": "advanced",
+    "question": "구조화된 출력에서 'required' 필드와 'optional' 필드를 구분해야 하는 이유는?",
+    "choices": [
+      "A. 처리 속도를 높이기 위해",
+      "B. 정보가 없을 때 모델이 환각 데이터를 생성하는 것을 방지하기 위해",
+      "C. JSON 파일 크기를 줄이기 위해",
+      "D. API 비용을 절감하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "optional 필드를 사용하면 정보가 없을 때 null을 반환할 수 있어, 모델이 누락된 정보를 환각으로 채우는 것을 방지합니다. required 필드는 반드시 존재해야 하는 핵심 정보에만 사용합니다."
+  },
+  {
+    "id": 33,
+    "domain": "prompt-engineering",
+    "difficulty": "intermediate",
+    "question": "JSON Schema에서 'maxLength'와 'minLength'를 설정하는 주된 이유는?",
+    "choices": [
+      "A. 데이터베이스 저장 공간을 절약하기 위해",
+      "B. 모델 출력의 길이를 제어하여 유효한 데이터만 생성하게 하기 위해",
+      "C. API 호출 비용을 줄이기 위해",
+      "D. 프롬프트 길이를 제한하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "minLength/maxLength는 출력 값의 범위를 제한하여 빈 문자열이나 비정상적으로 긴 출력을 방지합니다. 프로그래매틱 강제의 일부입니다."
+  },
+  {
+    "id": 34,
+    "domain": "tool-design-mcp",
+    "difficulty": "basic",
+    "question": "MCP의 세 가지 핵심 구성 요소는?",
+    "choices": [
+      "A. 모델, 데이터, 서버",
+      "B. 서버, 클라이언트, 트랜스포트",
+      "C. API, SDK, CLI",
+      "D. 프론트엔드, 백엔드, 데이터베이스"
+    ],
+    "answer": 1,
+    "explanation": "MCP는 Server(도구/리소스 노출), Client(모델 측 도구 탐색/호출), Transport(통신 레이어 — stdio, HTTP/SSE)의 세 구성 요소로 이루어집니다."
+  },
+  {
+    "id": 35,
+    "domain": "tool-design-mcp",
+    "difficulty": "intermediate",
+    "question": "도구의 설명(description)이 상세해야 하는 이유는?",
+    "choices": [
+      "A. 사용자에게 문서를 제공하기 위해",
+      "B. 모델이 올바른 도구를 선택하는 데 설명을 핵심 판단 기준으로 사용하기 때문에",
+      "C. API 응답 크기를 늘리기 위해",
+      "D. 코드 리뷰를 통과하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "모델은 도구의 이름과 설명을 기반으로 어떤 도구를 호출할지 결정합니다. 설명이 부실하면 도구 선택 오류가 증가합니다."
+  },
+  {
+    "id": 36,
+    "domain": "tool-design-mcp",
+    "difficulty": "advanced",
+    "question": "도구 입력에 대한 보안 검증을 구현할 때 가장 중요한 원칙은?",
+    "choices": [
+      "A. 모든 입력을 신뢰한다 — 모델이 이미 검증했으므로",
+      "B. 최소 권한 원칙을 적용하고, 모든 입력을 검증한다",
+      "C. 관리자 권한으로 모든 도구를 실행한다",
+      "D. 보안 검증은 성능 저하를 초래하므로 프로덕션에서는 생략한다"
+    ],
+    "answer": 1,
+    "explanation": "도구는 최소 권한 원칙(least privilege)을 따르고, 모든 입력을 검증해야 합니다. 모델의 출력을 신뢰하지 말고, 인젝션 공격 등을 방지하기 위해 입력을 반드시 새니타이징합니다."
+  },
+  {
+    "id": 37,
+    "domain": "tool-design-mcp",
+    "difficulty": "intermediate",
+    "question": "MCP 서버에서 도구와 리소스(Resource)의 차이는?",
+    "choices": [
+      "A. 차이가 없다 — 같은 개념이다",
+      "B. 도구는 작업을 수행하고, 리소스는 읽기 전용 데이터를 제공한다",
+      "C. 리소스는 도구보다 실행 속도가 빠르다",
+      "D. 도구는 동기, 리소스는 비동기로 작동한다"
+    ],
+    "answer": 1,
+    "explanation": "MCP에서 도구(Tool)는 작업을 수행하는 함수이고, 리소스(Resource)는 읽기 전용으로 데이터를 제공합니다. 리소스는 상태를 변경하지 않으므로 안전하게 자주 호출할 수 있습니다."
+  },
+  {
+    "id": 38,
+    "domain": "context-management",
+    "difficulty": "basic",
+    "question": "컨텍스트 윈도우에서 '토큰'이란?",
+    "choices": [
+      "A. 인증에 사용되는 보안 키",
+      "B. 모델이 처리하는 텍스트의 기본 단위 (단어 또는 단어의 일부)",
+      "C. API 호출 횟수를 세는 단위",
+      "D. 서버의 메모리 용량 단위"
+    ],
+    "answer": 1,
+    "explanation": "토큰은 모델이 텍스트를 처리하는 기본 단위입니다. 대략 영어 단어 1개 ≈ 1-1.5 토큰, 한국어 글자 1개 ≈ 1-2 토큰입니다. 컨텍스트 윈도우는 처리 가능한 최대 토큰 수를 의미합니다."
+  },
+  {
+    "id": 39,
+    "domain": "context-management",
+    "difficulty": "intermediate",
+    "question": "대화형 에이전트에서 컨텍스트 프루닝(pruning)의 올바른 전략은?",
+    "choices": [
+      "A. 가장 오래된 메시지부터 무조건 삭제한다",
+      "B. 현재 작업과의 관련성을 기준으로 우선순위를 매겨 선별한다",
+      "C. 모든 메시지를 요약하여 하나로 압축한다",
+      "D. 사용자의 메시지만 유지하고 에이전트 응답을 삭제한다"
+    ],
+    "answer": 1,
+    "explanation": "관련성 기반 프루닝이 가장 효과적입니다. 시간순 삭제는 중요한 초기 컨텍스트를 잃을 수 있고, 전체 요약은 세부 사항을 놓칠 수 있습니다."
+  },
+  {
+    "id": 40,
+    "domain": "context-management",
+    "difficulty": "advanced",
+    "question": "RAG 시스템에서 검색 결과가 없거나 관련성이 낮을 때 가장 올바른 대응은?",
+    "choices": [
+      "A. 모델의 사전 학습 지식으로 답변을 생성한다",
+      "B. '관련 정보를 찾을 수 없습니다'라고 명시하고, 사용자에게 다른 접근을 제안한다",
+      "C. 가장 관련성이 높은 결과를 강제로 사용한다",
+      "D. 에러를 반환하고 시스템을 종료한다"
+    ],
+    "answer": 1,
+    "explanation": "검색 결과가 없을 때 모델이 자체 지식으로 답변하면 환각 위험이 있습니다. 정보 부재를 명시하고 대안을 제안하는 것이 신뢰도 높은 대응입니다."
+  },
+  {
+    "id": 41,
+    "domain": "context-management",
+    "difficulty": "intermediate",
+    "question": "에이전트의 신뢰도(reliability)를 높이기 위한 방법으로 적절하지 않은 것은?",
+    "choices": [
+      "A. 불확실한 정보에 대해 명시적으로 표시한다",
+      "B. 출처를 항상 인용한다",
+      "C. 모든 응답에 100% 확신을 표현한다",
+      "D. 신뢰도 점수를 출력에 포함한다"
+    ],
+    "answer": 2,
+    "explanation": "모든 응답에 100% 확신을 표현하는 것은 오히려 신뢰도를 떨어뜨립니다. 불확실성을 명시하고, 출처를 인용하며, 신뢰도 점수를 제공하는 것이 올바른 접근입니다."
+  },
+  {
+    "id": 42,
+    "domain": "agentic-architecture",
+    "difficulty": "basic",
+    "question": "에이전트에서 'Observe → Think → Act' 루프의 'Observe' 단계에서 수행하는 것은?",
+    "choices": [
+      "A. 최종 결과를 사용자에게 전달한다",
+      "B. 현재 환경의 상태와 입력을 수집한다",
+      "C. 다음 행동을 실행한다",
+      "D. 에이전트를 종료한다"
+    ],
+    "answer": 1,
+    "explanation": "Observe 단계에서는 도구 실행 결과, 사용자 입력, 환경 상태 등 현재 상황에 대한 정보를 수집합니다. 이를 바탕으로 Think 단계에서 판단하고 Act에서 행동합니다."
+  },
+  {
+    "id": 43,
+    "domain": "agentic-architecture",
+    "difficulty": "advanced",
+    "question": "Reflexion 패턴이 ReAct 패턴과 다른 핵심 특징은?",
+    "choices": [
+      "A. 도구를 사용하지 않는다",
+      "B. 이전 시도의 결과를 자기 평가하여 다음 시도에 반영한다",
+      "C. 병렬 실행만 지원한다",
+      "D. 단일 작업만 수행할 수 있다"
+    ],
+    "answer": 1,
+    "explanation": "Reflexion은 이전 시도의 결과를 스스로 평가(self-reflection)하고, 그 피드백을 다음 시도에 반영하여 반복적으로 개선합니다. 메타인지적 접근이 핵심 차별점입니다."
+  },
+  {
+    "id": 44,
+    "domain": "claude-code",
+    "difficulty": "basic",
+    "question": "Claude Code의 주요 실행 환경은?",
+    "choices": [
+      "A. 웹 브라우저",
+      "B. 명령줄 인터페이스(CLI)",
+      "C. 모바일 앱",
+      "D. 데스크톱 GUI"
+    ],
+    "answer": 1,
+    "explanation": "Claude Code는 CLI(명령줄 인터페이스) 기반 에이전틱 코딩 도구입니다. 터미널에서 실행되며, VS Code/JetBrains 확장을 통해 IDE에서도 사용 가능합니다."
+  },
+  {
+    "id": 45,
+    "domain": "claude-code",
+    "difficulty": "advanced",
+    "question": "Claude Code에서 worktree isolation이 유용한 상황은?",
+    "choices": [
+      "A. 단일 파일을 수정할 때",
+      "B. 여러 에이전트가 동일 레포에서 병렬로 작업하여 파일 충돌을 방지할 때",
+      "C. Git을 사용하지 않을 때",
+      "D. 프로젝트를 삭제할 때"
+    ],
+    "answer": 1,
+    "explanation": "Worktree isolation은 Git worktree를 사용하여 각 에이전트에 레포의 독립된 복사본을 제공합니다. 병렬 작업 시 파일 충돌을 방지하는 핵심 기능입니다."
+  },
+  {
+    "id": 46,
+    "domain": "prompt-engineering",
+    "difficulty": "basic",
+    "question": "Zero-shot 프롬프팅과 Few-shot 프롬프팅의 차이는?",
+    "choices": [
+      "A. Zero-shot은 영어만, Few-shot은 다국어를 지원한다",
+      "B. Zero-shot은 예시 없이, Few-shot은 2-3개의 예시를 포함하여 모델을 안내한다",
+      "C. Zero-shot이 항상 Few-shot보다 정확하다",
+      "D. 차이가 없다"
+    ],
+    "answer": 1,
+    "explanation": "Zero-shot은 예시 없이 지시만으로, Few-shot은 입출력 예시를 포함하여 모델을 안내합니다. 복잡한 작업에서는 Few-shot이 정확도를 크게 향상시킵니다."
+  },
+  {
+    "id": 47,
+    "domain": "prompt-engineering",
+    "difficulty": "advanced",
+    "question": "구조화된 출력에서 검증 루프의 최대 재시도 횟수를 설정해야 하는 이유는?",
+    "choices": [
+      "A. API 비용을 절약하기 위해",
+      "B. 무한 루프를 방지하고, 일정 횟수 실패 시 수동 리뷰로 에스컬레이션하기 위해",
+      "C. 코드를 간결하게 유지하기 위해",
+      "D. 서버 부하를 줄이기 위해"
+    ],
+    "answer": 1,
+    "explanation": "최대 재시도 횟수(보통 3회)는 무한 루프를 방지합니다. 재시도 후에도 실패하면 수동 리뷰 큐로 에스컬레이션하여 사람이 처리하도록 합니다."
+  },
+  {
+    "id": 48,
+    "domain": "tool-design-mcp",
+    "difficulty": "basic",
+    "question": "MCP에서 Transport의 역할은?",
+    "choices": [
+      "A. 도구의 비즈니스 로직을 실행한다",
+      "B. MCP 서버와 클라이언트 간의 통신을 담당한다",
+      "C. 모델의 가중치를 전송한다",
+      "D. 데이터를 암호화한다"
+    ],
+    "answer": 1,
+    "explanation": "Transport는 MCP 서버와 클라이언트 간의 통신 레이어입니다. stdio(로컬), HTTP/SSE(원격) 등의 방식을 지원합니다."
+  },
+  {
+    "id": 49,
+    "domain": "tool-design-mcp",
+    "difficulty": "advanced",
+    "question": "도구 호출 시 타임아웃을 설정하지 않으면 발생할 수 있는 문제는?",
+    "choices": [
+      "A. 보안 취약점이 생긴다",
+      "B. 외부 API가 응답하지 않으면 에이전트 전체가 무기한 대기 상태에 빠진다",
+      "C. 도구의 출력이 잘린다",
+      "D. 다른 도구를 호출할 수 없다"
+    ],
+    "answer": 1,
+    "explanation": "타임아웃 없이 외부 API를 호출하면, 서버 장애 시 에이전트가 영구적으로 멈출 수 있습니다. 합리적인 타임아웃과 fallback 동작을 반드시 정의해야 합니다."
+  },
+  {
+    "id": 50,
+    "domain": "context-management",
+    "difficulty": "basic",
+    "question": "환각(Hallucination)을 줄이기 위한 가장 효과적인 방법은?",
+    "choices": [
+      "A. 모델의 온도를 최대로 높인다",
+      "B. RAG를 통해 신뢰할 수 있는 문서를 컨텍스트에 포함한다",
+      "C. 프롬프트를 최대한 짧게 작성한다",
+      "D. 모델에게 '거짓말하지 마세요'라고 지시한다"
+    ],
+    "answer": 1,
+    "explanation": "RAG(검색 증강 생성)를 통해 검증된 문서를 컨텍스트에 포함하면, 모델이 사전 학습 지식 대신 제공된 문서 기반으로 답변하여 환각을 크게 줄입니다."
+  },
+  {
+    "id": 51,
+    "domain": "context-management",
+    "difficulty": "advanced",
+    "question": "Summary handoff와 Structured handoff 중, 정보 손실을 최소화해야 하는 상황에서 적합한 것은?",
+    "choices": [
+      "A. Summary handoff — 요약이 더 효율적이므로",
+      "B. Structured handoff — 사전 정의된 필수 필드를 보장하므로",
+      "C. 두 방식 모두 동일한 정보를 전달한다",
+      "D. 핸드오프 없이 전체 컨텍스트를 공유해야 한다"
+    ],
+    "answer": 1,
+    "explanation": "Structured handoff는 사전 정의된 스키마의 필수 필드를 모두 포함하므로 정보 손실을 방지합니다. Summary handoff는 요약 과정에서 세부 사항이 손실될 수 있습니다."
+  },
+  {
+    "id": 52,
+    "domain": "agentic-architecture",
+    "difficulty": "intermediate",
+    "question": "출력 Guardrails가 적용되어야 하는 시점은?",
+    "choices": [
+      "A. 에이전트가 작업을 시작하기 전",
+      "B. 에이전트의 출력이 사용자에게 전달되기 전",
+      "C. 사용자가 입력을 보내기 전",
+      "D. 시스템이 종료될 때"
+    ],
+    "answer": 1,
+    "explanation": "출력 Guardrails는 에이전트의 응답이 사용자에게 전달되기 전에 적용됩니다. 사실 정확성, 톤/매너, 민감 정보 포함 여부를 검증합니다."
+  },
+  {
+    "id": 53,
+    "domain": "claude-code",
+    "difficulty": "intermediate",
+    "question": "Claude Code에서 MCP 서버를 연결하는 주된 이유는?",
+    "choices": [
+      "A. Claude Code의 처리 속도를 높이기 위해",
+      "B. 외부 도구와 데이터 소스에 접근하여 Claude Code의 기능을 확장하기 위해",
+      "C. Claude Code의 메모리를 증가시키기 위해",
+      "D. 다른 AI 모델을 사용하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "MCP 서버를 통해 Claude Code는 데이터베이스, API, 파일 시스템 등 외부 리소스에 접근할 수 있습니다. 기본 도구(파일 읽기/쓰기, 터미널) 외에 기능을 확장합니다."
+  },
+  {
+    "id": 54,
+    "domain": "prompt-engineering",
+    "difficulty": "intermediate",
+    "question": "프롬프트에서 '역할 정의(role definition)'가 중요한 이유는?",
+    "choices": [
+      "A. API 호출 비용을 줄이기 위해",
+      "B. 모델의 응답 범위와 전문성 수준을 설정하여 일관된 출력을 유도하기 위해",
+      "C. 모델의 학습을 개선하기 위해",
+      "D. 다른 사용자의 접근을 제한하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "역할 정의('당신은 고객 지원 분류 전문가입니다')는 모델의 응답 범위, 톤, 전문성을 설정하여 일관되고 적절한 출력을 유도합니다."
+  },
+  {
+    "id": 55,
+    "domain": "tool-design-mcp",
+    "difficulty": "intermediate",
+    "question": "MCP 서버에서 도구의 상태 의존성(statefulness)에 대한 올바른 접근은?",
+    "choices": [
+      "A. 도구 호출 간에 상태를 유지하여 성능을 최적화한다",
+      "B. 각 도구 호출은 독립적이어야 하며 외부 상태에 의존하지 않아야 한다",
+      "C. 상태는 클라이언트에서 관리해야 한다",
+      "D. 상태는 중요하지 않다"
+    ],
+    "answer": 1,
+    "explanation": "MCP 도구 호출은 무상태(stateless)이어야 합니다. 각 호출이 독립적으로 실행되어야 예측 가능하고 안정적인 동작을 보장합니다."
+  },
+  {
+    "id": 56,
+    "domain": "context-management",
+    "difficulty": "intermediate",
+    "question": "에이전트의 '워킹 메모리(Working Memory)'와 '장기 메모리(Long-term Memory)'의 차이는?",
+    "choices": [
+      "A. 워킹 메모리는 빠르고 장기 메모리는 느리다",
+      "B. 워킹 메모리는 현재 작업 관련 활성 정보, 장기 메모리는 세션 간 지속되는 영구 저장",
+      "C. 두 메모리의 차이는 없다",
+      "D. 워킹 메모리는 텍스트만, 장기 메모리는 이미지만 저장한다"
+    ],
+    "answer": 1,
+    "explanation": "워킹 메모리는 현재 작업에 필요한 활성 정보를 담고, 장기 메모리는 세션 간 지속되는 정보(사용자 선호, 과거 상호작용 요약)를 영구 저장합니다."
+  },
+  {
+    "id": 57,
+    "domain": "agentic-architecture",
+    "difficulty": "basic",
+    "question": "에이전트의 '타임아웃(timeout)' 종료 조건이 필요한 이유는?",
+    "choices": [
+      "A. 사용자 경험을 향상시키기 위해",
+      "B. 에이전트가 무기한 실행되어 비용과 리소스를 낭비하는 것을 방지하기 위해",
+      "C. 코드를 간결하게 만들기 위해",
+      "D. 테스트를 쉽게 하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "타임아웃은 에이전트가 복잡한 작업에서 무기한 실행되는 것을 방지합니다. API 비용 폭주, 리소스 소진, 사용자 대기 시간 초과를 예방하는 핵심 안전장치입니다."
+  },
+  {
+    "id": 58,
+    "domain": "claude-code",
+    "difficulty": "intermediate",
+    "question": "Claude Code에서 permission mode의 목적은?",
+    "choices": [
+      "A. 코드의 실행 속도를 조절한다",
+      "B. 도구 호출과 파일 수정에 대한 사용자의 승인 수준을 제어한다",
+      "C. 네트워크 접근을 차단한다",
+      "D. 다른 사용자의 접근을 관리한다"
+    ],
+    "answer": 1,
+    "explanation": "Permission mode는 Claude Code의 도구 호출(파일 쓰기, 명령 실행 등)에 대해 사용자가 자동 승인/개별 승인/차단을 설정할 수 있게 합니다."
+  },
+  {
+    "id": 59,
+    "domain": "prompt-engineering",
+    "difficulty": "basic",
+    "question": "프롬프트 엔지니어링에서 '온도(temperature)' 파라미터가 낮을 때의 효과는?",
+    "choices": [
+      "A. 더 창의적이고 다양한 출력을 생성한다",
+      "B. 더 결정적이고 일관된 출력을 생성한다",
+      "C. 출력 길이가 짧아진다",
+      "D. 처리 속도가 빨라진다"
+    ],
+    "answer": 1,
+    "explanation": "온도가 낮으면 모델이 확률이 높은 토큰을 선택하여 일관되고 예측 가능한 출력을 생성합니다. 데이터 추출이나 분류 작업에 적합합니다."
+  },
+  {
+    "id": 60,
+    "domain": "context-management",
+    "difficulty": "advanced",
+    "question": "청킹(Chunking) 전략에서 '논리적 단위' 분할이 '고정 크기' 분할보다 나은 이유는?",
+    "choices": [
+      "A. 구현이 더 쉽기 때문에",
+      "B. 문맥적으로 완전한 단위를 유지하여 추출 정확도가 높아지기 때문에",
+      "C. 처리 속도가 더 빠르기 때문에",
+      "D. 토큰 수를 더 정확하게 제어할 수 있기 때문에"
+    ],
+    "answer": 1,
+    "explanation": "논리적 단위(섹션, 단락, 페이지) 분할은 문맥을 보존하여 각 청크에서의 추출 정확도를 높입니다. 고정 크기 분할은 문장 중간에서 잘릴 수 있어 정보가 손실됩니다."
   }
 ]
