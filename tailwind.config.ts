@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   darkMode: "class",
@@ -38,6 +39,6 @@ const config: Config = {
       zIndex: { toc: "10", sidebar: "20", header: "30", dropdown: "40", overlay: "50", modal: "55", toast: "60", fullscreen: "70" },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
 };
 export default config;

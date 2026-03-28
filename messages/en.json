@@ -77,7 +77,8 @@
   "domainDetail": {
     "title": "Domain Detail",
     "description": "Explore the detailed study content and key concepts for the selected domain.",
-    "backToList": "Back to Domain List"
+    "backToList": "Back to Domain List",
+    "weight": "Exam Weight"
   },
   "scenarios": {
     "title": "Scenario List",

@@ -98,6 +98,34 @@ export function QuizPlayer({ questions, locale }: QuizPlayerProps) {
   const current = filtered[currentIdx];
   const domains = [...new Set(questions.map((q) => q.domain))];
 
+  // Save history when result screen is shown
+  const answeredQsForHistory = useMemo(
+    () => filtered.filter((q) => answers[q.id] !== undefined),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [quizMode] // only recompute when mode changes to "result"
+  );
+  const correctCountForHistory = answeredQsForHistory.filter((q) => answers[q.id] === q.answer).length;
+  const scoreForHistory = answeredQsForHistory.length
+    ? Math.round((correctCountForHistory / answeredQsForHistory.length) * 100)
+    : 0;
+
+  useEffect(() => {
+    if (quizMode !== "result") return;
+    try {
+      const history = JSON.parse(localStorage.getItem("ccafup_quiz_history") || "[]");
+      history.push({
+        date: new Date().toISOString(),
+        mode: isMock ? "mock" : "practice",
+        total: filtered.length,
+        correct: correctCountForHistory,
+        score: scoreForHistory,
+        timeUsed: isMock ? MOCK_TIME - timeLeft : null,
+      });
+      localStorage.setItem("ccafup_quiz_history", JSON.stringify(history.slice(-20)));
+    } catch {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quizMode]);
+
   // Timer for mock mode
   useEffect(() => {
     if (quizMode === "mock") {
@@ -242,22 +270,6 @@ export function QuizPlayer({ questions, locale }: QuizPlayerProps) {
     const score = answeredQs.length ? Math.round((correctQs.length / answeredQs.length) * 100) : 0;
     const passed = score >= 72;
     const unanswered = filtered.length - answeredQs.length;
-
-    // Save history
-    useEffect(() => {
-      try {
-        const history = JSON.parse(localStorage.getItem("ccafup_quiz_history") || "[]");
-        history.push({
-          date: new Date().toISOString(),
-          mode: isMock ? "mock" : "practice",
-          total: filtered.length,
-          correct: correctQs.length,
-          score,
-          timeUsed: isMock ? MOCK_TIME - timeLeft : null,
-        });
-        localStorage.setItem("ccafup_quiz_history", JSON.stringify(history.slice(-20)));
-      } catch {}
-    }, []);
 
     return (
       <div className="mx-auto max-w-2xl">
